@@ -13,7 +13,8 @@
             pageSize: 100,
             pageList: [100, 200, 300, 400, 500],
             columns: [[
-                {field: 'employeeSerial', title: '编号', hidden: true, width: 10},
+                {field: 'id', title: '编号', hidden: true, width: 10},
+                {field: 'employeeSerial', title: '编号', width: 10},
                 {field: 'employeeName', title: '用户名', width: 10}
             ]],
             toolbar: [{
@@ -47,11 +48,9 @@
             }
         });
         $('#feed_back_search_button').bind('click', function () {
-            var userId = $("#feed_back__search_input_user").textbox("getValue");
-            var status = $("#feed_back__search_input_status").textbox("getValue");
-            $("#feed_back_table").datagrid('load', {
-                feedStatus: status,
-                provideUserId: userId
+            var userId = $("#security_user_name").textbox("getValue");
+            $("#security_table").datagrid('load', {
+                username:userId
             });
         })
     });
@@ -59,18 +58,11 @@
 <div class="easyui-layout" data-options="fit:true,border:false">
     <div data-options="region:'north',border:false"
          style="width:100%;height: 40px;line-height: 40px;padding-left: 25px">
-        <span>留言用户: </span><input class="easyui-textbox" id="feed_back__search_input_user" style="width:120px"/>
-        <span>留言状态：</span>
-        <select class="easyui-combobox" id="feed_back__search_input_status" style="width: 120px">
-            <option value="">--请选择--</option>
-            <option value="0">未回复</option>
-            <option value="1">已回复</option>
-        </select>
-
+        <span>用户名: </span><input class="easyui-textbox" id="security_user_name" style="width:120px"/>
         <a id="feed_back_search_button" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
     </div>
     <div data-options="region:'center',border:false">
-        <table id="feed_back_table" class="easyui-datagrid" title="系统留言列表"></table>
+        <table id="security_table" class="easyui-datagrid" title="拥有权限用户列表"></table>
     </div>
 </div>
 <#--新增-->

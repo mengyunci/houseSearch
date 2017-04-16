@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="${base}/css/basic/kube.css">
     <script type="text/javascript" src="${base}/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="${base}/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="${base}/js/common.js"></script>
+    <script type="text/javascript" src="${base}/easyui/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="${base}/js/common/gridcrud.js"></script>
 </head>
 <body class="easyui-layout">
 <div data-options="region:'north',border:false"

@@ -1984,7 +1984,7 @@
 
   <select id="findBySecurity" resultMap="ResultMapWithBLOBs" parameterType="string">
     SELECT e.*
-    FROM security_king s LEFT JOIN employee e ON s.employee_serial = e.employee_serial WHERE  s.employee_serial = #{securityEmployeeId};
+    FROM security_king s LEFT JOIN employee e ON s.employee_serial = e.employee_serial WHERE  e.employee_name LIKE '%' +#{securityEmployeeId} + '%';
   </select>
 
 

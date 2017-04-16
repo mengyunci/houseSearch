@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.unknow.entity.Employee;
 import com.unknow.mapper.EmployeeMapper;
 import com.unknow.mapper.MySecurityMapper;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,14 +33,13 @@ public class MySecurityController {
 
     @RequestMapping("/security/showall")
     @ResponseBody
-    public PageInfo<Employee> showAll(HttpSession session, @RequestParam(value = "page", defaultValue = "1") int pageNum, @RequestParam(value = "rows", defaultValue = "20") int pageSize
+    public PageInfo<Employee> showAll(String username, @RequestParam(value = "page", defaultValue = "1") int pageNum, @RequestParam(value = "rows", defaultValue = "20") int pageSize
                           ) {
+        if (StringUtils.isBlank(username)) {
+            username = "";
+        }
 
-        Employee employee = (Employee) session.getAttribute("user");
-
-        PageHelper.startPage(pageNum,pageSize);
-
-        return new PageInfo<>(employeeMapper.findBySecurity(employee.getEmployeeSerial()));
+        return new PageInfo<>(employeeMapper.findBySecurity(username));
     }
 
 
