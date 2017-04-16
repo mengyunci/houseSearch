@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -30,16 +31,11 @@ public class IndexController {
 
     @RequestMapping(value = {"/login","/"},method = RequestMethod.GET)
     public String login() {
-        List<Employee> employees = employeeMapper.selectByExample(null);
         return "login";
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String loginPost() {
-        EmployeeExample employeeExample = new EmployeeExample();
-
-        List<Employee> employees = employeeMapper.selectByExample(null);
-        System.out.println(employees.size());
 
 
 
@@ -58,5 +54,11 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping(value = "/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("username");
+        session.removeAttribute("user");
+        return "redirect:/login";
+    }
 
 }

@@ -15,14 +15,20 @@
 <div data-options="region:'north',border:false"
      class="group wrap header panel-body panel-body-noheader panel-body-noborder layout-body"
      style="font-size: 100%; width: 100%; height: 66px;">
-    <div class="content">
-        <div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
-            <span>EasyUI</span>
-        </div>
-        <div id="elogo" class="navbar navbar-left">
-
-        </div>
-        <div style="clear:both"></div>
+    <div class="content" style="height: 60px;">
+            <img id="logout-btn" src="${base}/images/logout.png" style="height: 50px;float:right;cursor: pointer">
+        <script type="text/javascript">
+            $(function () {
+                $('#logout-btn').click(function () {
+                            $.messager.confirm("操作提示", "您确定要退出吗？", function (data) {
+                                if (data) {
+                                    window.location.href = "${base}/logout";
+                                }
+                            });
+                        }
+                )
+            });
+        </script>
     </div>
 </div>
 
