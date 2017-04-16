@@ -1,0 +1,1983 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unknow.mapper.EmployeeMapper" >
+  <resultMap id="BaseResultMap" type="com.unknow.entity.Employee" >
+    <id column="employee_serial" property="employeeSerial" jdbcType="VARCHAR" />
+    <result column="filiation_serial" property="filiationSerial" jdbcType="VARCHAR" />
+    <result column="department_serial" property="departmentSerial" jdbcType="VARCHAR" />
+    <result column="employee_name" property="employeeName" jdbcType="VARCHAR" />
+    <result column="employee_spell" property="employeeSpell" jdbcType="VARCHAR" />
+    <result column="credentials_serial" property="credentialsSerial" jdbcType="VARCHAR" />
+    <result column="employee_jdserial" property="employeeJdserial" jdbcType="VARCHAR" />
+    <result column="employee_id" property="employeeId" jdbcType="VARCHAR" />
+    <result column="employee_birth" property="employeeBirth" jdbcType="TIMESTAMP" />
+    <result column="employee_sex" property="employeeSex" jdbcType="BIT" />
+    <result column="nation_code" property="nationCode" jdbcType="VARCHAR" />
+    <result column="polity_code" property="polityCode" jdbcType="VARCHAR" />
+    <result column="deformity_code" property="deformityCode" jdbcType="VARCHAR" />
+    <result column="employee_degress" property="employeeDegress" jdbcType="VARCHAR" />
+    <result column="employee_state" property="employeeState" jdbcType="VARCHAR" />
+    <result column="employee_marriage" property="employeeMarriage" jdbcType="VARCHAR" />
+    <result column="employee_code" property="employeeCode" jdbcType="BIT" />
+    <result column="employee_academy" property="employeeAcademy" jdbcType="VARCHAR" />
+    <result column="employee_graduate" property="employeeGraduate" jdbcType="TIMESTAMP" />
+    <result column="employee_enter" property="employeeEnter" jdbcType="TIMESTAMP" />
+    <result column="employee_work" property="employeeWork" jdbcType="TIMESTAMP" />
+    <result column="employee_memo" property="employeeMemo" jdbcType="VARCHAR" />
+    <result column="employee_zhicheng" property="employeeZhicheng" jdbcType="VARCHAR" />
+    <result column="employee_zhiwu" property="employeeZhiwu" jdbcType="VARCHAR" />
+    <result column="employee_tuixiu" property="employeeTuixiu" jdbcType="TIMESTAMP" />
+    <result column="employee_age" property="employeeAge" jdbcType="INTEGER" />
+    <result column="employee_phone" property="employeePhone" jdbcType="VARCHAR" />
+    <result column="employee_mobiletel" property="employeeMobiletel" jdbcType="VARCHAR" />
+    <result column="employee_caiwuhao" property="employeeCaiwuhao" jdbcType="VARCHAR" />
+    <result column="employee_double" property="employeeDouble" jdbcType="VARCHAR" />
+    <result column="employee_zfzgxs" property="employeeZfzgxs" jdbcType="NUMERIC" />
+    <result column="emp_fb_gzbz" property="empFbGzbz" jdbcType="DECIMAL" />
+    <result column="emp_fb_zfbtmjbz" property="empFbZfbtmjbz" jdbcType="DECIMAL" />
+    <result column="emp_fb_symj" property="empFbSymj" jdbcType="DECIMAL" />
+    <result column="emp_fb_qcmj" property="empFbQcmj" jdbcType="DECIMAL" />
+    <result column="emp_fb_sfqk" property="empFbSfqk" jdbcType="DECIMAL" />
+    <result column="emp_fb_gjjqgl" property="empFbGjjqgl" jdbcType="DECIMAL" />
+    <result column="emp_fb_gjjqgljs" property="empFbGjjqgljs" jdbcType="DECIMAL" />
+    <result column="emp_fb_aybt" property="empFbAybt" jdbcType="DECIMAL" />
+    <result column="emp_fb_ybhj" property="empFbYbhj" jdbcType="DECIMAL" />
+    <result column="emp_fb_wfycxbt" property="empFbWfycxbt" jdbcType="DECIMAL" />
+    <result column="emp_fb_wdbycxbt" property="empFbWdbycxbt" jdbcType="DECIMAL" />
+    <result column="emp_fb_hj" property="empFbHj" jdbcType="DECIMAL" />
+    <result column="emp_fb_fh" property="empFbFh" jdbcType="VARCHAR" />
+    <result column="emp_fb_jzmj" property="empFbJzmj" jdbcType="DECIMAL" />
+    <result column="emp_pwd" property="empPwd" jdbcType="VARCHAR" />
+    <result column="pwd_flag" property="pwdFlag" jdbcType="CHAR" />
+    <result column="zjbt" property="zjbt" jdbcType="NUMERIC" />
+    <result column="employee_wfyy" property="employeeWfyy" jdbcType="VARCHAR" />
+    <result column="employee_ffjf" property="employeeFfjf" jdbcType="DECIMAL" />
+    <result column="pmc" property="pmc" jdbcType="INTEGER" />
+    <result column="hmc" property="hmc" jdbcType="INTEGER" />
+    <result column="employee_sssj" property="employeeSssj" jdbcType="TIMESTAMP" />
+    <result column="lysj" property="lysj" jdbcType="TIMESTAMP" />
+    <result column="zhsj" property="zhsj" jdbcType="TIMESTAMP" />
+    <result column="rsbz_serial" property="rsbzSerial" jdbcType="VARCHAR" />
+    <result column="employee_zhicheng_lev" property="employeeZhichengLev" jdbcType="VARCHAR" />
+    <result column="employee_zhiwu_lev" property="employeeZhiwuLev" jdbcType="VARCHAR" />
+    <result column="isselect" property="isselect" jdbcType="CHAR" />
+    <result column="olddept" property="olddept" jdbcType="VARCHAR" />
+    <result column="employee_gjj" property="employeeGjj" jdbcType="DECIMAL" />
+    <result column="employee_gjjsj" property="employeeGjjsj" jdbcType="TIMESTAMP" />
+    <result column="employee_hksz" property="employeeHksz" jdbcType="VARCHAR" />
+    <result column="employee_email" property="employeeEmail" jdbcType="VARCHAR" />
+    <result column="employee_dwcode" property="employeeDwcode" jdbcType="VARCHAR" />
+    <result column="employee_wife" property="employeeWife" jdbcType="VARCHAR" />
+    <result column="employee_wifegzh" property="employeeWifegzh" jdbcType="CHAR" />
+    <result column="employee_wifename" property="employeeWifename" jdbcType="VARCHAR" />
+    <result column="employee_wifespell" property="employeeWifespell" jdbcType="VARCHAR" />
+    <result column="employee_wifeunit" property="employeeWifeunit" jdbcType="VARCHAR" />
+    <result column="employee_houseff" property="employeeHouseff" jdbcType="VARCHAR" />
+    <result column="employee_kinddate" property="employeeKinddate" jdbcType="TIMESTAMP" />
+    <result column="employee_fdzf" property="employeeFdzf" jdbcType="VARCHAR" />
+    <result column="employee_zfbtstat" property="employeeZfbtstat" jdbcType="CHAR" />
+    <result column="employee_yhzh" property="employeeYhzh" jdbcType="VARCHAR" />
+    <result column="employee_khyh" property="employeeKhyh" jdbcType="VARCHAR" />
+    <result column="employee_ycxbtje" property="employeeYcxbtje" jdbcType="DECIMAL" />
+    <result column="employee_ycxdate" property="employeeYcxdate" jdbcType="TIMESTAMP" />
+    <result column="employee_xqcode" property="employeeXqcode" jdbcType="CHAR" />
+    <result column="employee_zybtje" property="employeeZybtje" jdbcType="DECIMAL" />
+    <result column="employee_zw" property="employeeZw" jdbcType="VARCHAR" />
+    <result column="employee_zc" property="employeeZc" jdbcType="VARCHAR" />
+    <result column="employee_yhmemo" property="employeeYhmemo" jdbcType="VARCHAR" />
+    <result column="employee_sxdate" property="employeeSxdate" jdbcType="TIMESTAMP" />
+    <result column="employee_dszn" property="employeeDszn" jdbcType="CHAR" />
+    <result column="employee_zgxl" property="employeeZgxl" jdbcType="VARCHAR" />
+    <result column="employee_jdglold" property="employeeJdglold" jdbcType="DECIMAL" />
+    <result column="employee_jdglnew" property="employeeJdglnew" jdbcType="DECIMAL" />
+    <result column="employee_zyxhbt" property="employeeZyxhbt" jdbcType="DECIMAL" />
+    <result column="employee_tfje" property="employeeTfje" jdbcType="DECIMAL" />
+    <result column="employee_statedate" property="employeeStatedate" jdbcType="TIMESTAMP" />
+    <result column="employee_zfmj" property="employeeZfmj" jdbcType="DECIMAL" />
+    <result column="employee_uarea" property="employeeUarea" jdbcType="DECIMAL" />
+    <result column="employee_yhzh2" property="employeeYhzh2" jdbcType="VARCHAR" />
+    <result column="employee_khyh2" property="employeeKhyh2" jdbcType="VARCHAR" />
+    <result column="employee_yhmemo2" property="employeeYhmemo2" jdbcType="VARCHAR" />
+    <result column="employee_zcdate" property="employeeZcdate" jdbcType="TIMESTAMP" />
+    <result column="employee_pofwmj" property="employeePofwmj" jdbcType="DECIMAL" />
+    <result column="employee_jdgl" property="employeeJdgl" jdbcType="DECIMAL" />
+    <result column="employee_rylb" property="employeeRylb" jdbcType="VARCHAR" />
+    <result column="employee_telphol" property="employeeTelphol" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.unknow.entity.Employee" extends="BaseResultMap" >
+    <result column="employee_photo" property="employeePhoto" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    employee_serial, filiation_serial, department_serial, employee_name, employee_spell, 
+    credentials_serial, employee_jdserial, employee_id, employee_birth, employee_sex, 
+    nation_code, polity_code, deformity_code, employee_degress, employee_state, employee_marriage, 
+    employee_code, employee_academy, employee_graduate, employee_enter, employee_work, 
+    employee_memo, employee_zhicheng, employee_zhiwu, employee_tuixiu, employee_age, 
+    employee_phone, employee_mobiletel, employee_caiwuhao, employee_double, employee_zfzgxs, 
+    emp_fb_gzbz, emp_fb_zfbtmjbz, emp_fb_symj, emp_fb_qcmj, emp_fb_sfqk, emp_fb_gjjqgl, 
+    emp_fb_gjjqgljs, emp_fb_aybt, emp_fb_ybhj, emp_fb_wfycxbt, emp_fb_wdbycxbt, emp_fb_hj, 
+    emp_fb_fh, emp_fb_jzmj, emp_pwd, pwd_flag, zjbt, employee_wfyy, employee_ffjf, pmc, 
+    hmc, employee_sssj, lysj, zhsj, rsbz_serial, employee_zhicheng_lev, employee_zhiwu_lev, 
+    isselect, olddept, employee_gjj, employee_gjjsj, employee_hksz, employee_email, employee_dwcode, 
+    employee_wife, employee_wifegzh, employee_wifename, employee_wifespell, employee_wifeunit, 
+    employee_houseff, employee_kinddate, employee_fdzf, employee_zfbtstat, employee_yhzh, 
+    employee_khyh, employee_ycxbtje, employee_ycxdate, employee_xqcode, employee_zybtje, 
+    employee_zw, employee_zc, employee_yhmemo, employee_sxdate, employee_dszn, employee_zgxl, 
+    employee_jdglold, employee_jdglnew, employee_zyxhbt, employee_tfje, employee_statedate, 
+    employee_zfmj, employee_uarea, employee_yhzh2, employee_khyh2, employee_yhmemo2, 
+    employee_zcdate, employee_pofwmj, employee_jdgl, employee_rylb, employee_telphol
+  </sql>
+  <sql id="Blob_Column_List" >
+    employee_photo
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.unknow.entity.EmployeeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.unknow.entity.EmployeeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from employee
+    where employee_serial = #{employeeSerial,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from employee
+    where employee_serial = #{employeeSerial,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.unknow.entity.EmployeeExample" >
+    delete from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.unknow.entity.Employee" >
+    insert into employee (employee_serial, filiation_serial, 
+      department_serial, employee_name, employee_spell, 
+      credentials_serial, employee_jdserial, employee_id, 
+      employee_birth, employee_sex, nation_code, 
+      polity_code, deformity_code, employee_degress, 
+      employee_state, employee_marriage, employee_code, 
+      employee_academy, employee_graduate, employee_enter, 
+      employee_work, employee_memo, employee_zhicheng, 
+      employee_zhiwu, employee_tuixiu, employee_age, 
+      employee_phone, employee_mobiletel, employee_caiwuhao, 
+      employee_double, employee_zfzgxs, emp_fb_gzbz, 
+      emp_fb_zfbtmjbz, emp_fb_symj, emp_fb_qcmj, 
+      emp_fb_sfqk, emp_fb_gjjqgl, emp_fb_gjjqgljs, 
+      emp_fb_aybt, emp_fb_ybhj, emp_fb_wfycxbt, 
+      emp_fb_wdbycxbt, emp_fb_hj, emp_fb_fh, 
+      emp_fb_jzmj, emp_pwd, pwd_flag, 
+      zjbt, employee_wfyy, employee_ffjf, 
+      pmc, hmc, employee_sssj, 
+      lysj, zhsj, rsbz_serial, 
+      employee_zhicheng_lev, employee_zhiwu_lev, 
+      isselect, olddept, employee_gjj, 
+      employee_gjjsj, employee_hksz, employee_email, 
+      employee_dwcode, employee_wife, employee_wifegzh, 
+      employee_wifename, employee_wifespell, employee_wifeunit, 
+      employee_houseff, employee_kinddate, employee_fdzf, 
+      employee_zfbtstat, employee_yhzh, employee_khyh, 
+      employee_ycxbtje, employee_ycxdate, employee_xqcode, 
+      employee_zybtje, employee_zw, employee_zc, 
+      employee_yhmemo, employee_sxdate, employee_dszn, 
+      employee_zgxl, employee_jdglold, employee_jdglnew, 
+      employee_zyxhbt, employee_tfje, employee_statedate, 
+      employee_zfmj, employee_uarea, employee_yhzh2, 
+      employee_khyh2, employee_yhmemo2, employee_zcdate, 
+      employee_pofwmj, employee_jdgl, employee_rylb, 
+      employee_telphol, employee_photo)
+    values (#{employeeSerial,jdbcType=VARCHAR}, #{filiationSerial,jdbcType=VARCHAR}, 
+      #{departmentSerial,jdbcType=VARCHAR}, #{employeeName,jdbcType=VARCHAR}, #{employeeSpell,jdbcType=VARCHAR}, 
+      #{credentialsSerial,jdbcType=VARCHAR}, #{employeeJdserial,jdbcType=VARCHAR}, #{employeeId,jdbcType=VARCHAR}, 
+      #{employeeBirth,jdbcType=TIMESTAMP}, #{employeeSex,jdbcType=BIT}, #{nationCode,jdbcType=VARCHAR}, 
+      #{polityCode,jdbcType=VARCHAR}, #{deformityCode,jdbcType=VARCHAR}, #{employeeDegress,jdbcType=VARCHAR}, 
+      #{employeeState,jdbcType=VARCHAR}, #{employeeMarriage,jdbcType=VARCHAR}, #{employeeCode,jdbcType=BIT}, 
+      #{employeeAcademy,jdbcType=VARCHAR}, #{employeeGraduate,jdbcType=TIMESTAMP}, #{employeeEnter,jdbcType=TIMESTAMP}, 
+      #{employeeWork,jdbcType=TIMESTAMP}, #{employeeMemo,jdbcType=VARCHAR}, #{employeeZhicheng,jdbcType=VARCHAR}, 
+      #{employeeZhiwu,jdbcType=VARCHAR}, #{employeeTuixiu,jdbcType=TIMESTAMP}, #{employeeAge,jdbcType=INTEGER}, 
+      #{employeePhone,jdbcType=VARCHAR}, #{employeeMobiletel,jdbcType=VARCHAR}, #{employeeCaiwuhao,jdbcType=VARCHAR}, 
+      #{employeeDouble,jdbcType=VARCHAR}, #{employeeZfzgxs,jdbcType=NUMERIC}, #{empFbGzbz,jdbcType=DECIMAL}, 
+      #{empFbZfbtmjbz,jdbcType=DECIMAL}, #{empFbSymj,jdbcType=DECIMAL}, #{empFbQcmj,jdbcType=DECIMAL}, 
+      #{empFbSfqk,jdbcType=DECIMAL}, #{empFbGjjqgl,jdbcType=DECIMAL}, #{empFbGjjqgljs,jdbcType=DECIMAL}, 
+      #{empFbAybt,jdbcType=DECIMAL}, #{empFbYbhj,jdbcType=DECIMAL}, #{empFbWfycxbt,jdbcType=DECIMAL}, 
+      #{empFbWdbycxbt,jdbcType=DECIMAL}, #{empFbHj,jdbcType=DECIMAL}, #{empFbFh,jdbcType=VARCHAR}, 
+      #{empFbJzmj,jdbcType=DECIMAL}, #{empPwd,jdbcType=VARCHAR}, #{pwdFlag,jdbcType=CHAR}, 
+      #{zjbt,jdbcType=NUMERIC}, #{employeeWfyy,jdbcType=VARCHAR}, #{employeeFfjf,jdbcType=DECIMAL}, 
+      #{pmc,jdbcType=INTEGER}, #{hmc,jdbcType=INTEGER}, #{employeeSssj,jdbcType=TIMESTAMP}, 
+      #{lysj,jdbcType=TIMESTAMP}, #{zhsj,jdbcType=TIMESTAMP}, #{rsbzSerial,jdbcType=VARCHAR}, 
+      #{employeeZhichengLev,jdbcType=VARCHAR}, #{employeeZhiwuLev,jdbcType=VARCHAR}, 
+      #{isselect,jdbcType=CHAR}, #{olddept,jdbcType=VARCHAR}, #{employeeGjj,jdbcType=DECIMAL}, 
+      #{employeeGjjsj,jdbcType=TIMESTAMP}, #{employeeHksz,jdbcType=VARCHAR}, #{employeeEmail,jdbcType=VARCHAR}, 
+      #{employeeDwcode,jdbcType=VARCHAR}, #{employeeWife,jdbcType=VARCHAR}, #{employeeWifegzh,jdbcType=CHAR}, 
+      #{employeeWifename,jdbcType=VARCHAR}, #{employeeWifespell,jdbcType=VARCHAR}, #{employeeWifeunit,jdbcType=VARCHAR}, 
+      #{employeeHouseff,jdbcType=VARCHAR}, #{employeeKinddate,jdbcType=TIMESTAMP}, #{employeeFdzf,jdbcType=VARCHAR}, 
+      #{employeeZfbtstat,jdbcType=CHAR}, #{employeeYhzh,jdbcType=VARCHAR}, #{employeeKhyh,jdbcType=VARCHAR}, 
+      #{employeeYcxbtje,jdbcType=DECIMAL}, #{employeeYcxdate,jdbcType=TIMESTAMP}, #{employeeXqcode,jdbcType=CHAR}, 
+      #{employeeZybtje,jdbcType=DECIMAL}, #{employeeZw,jdbcType=VARCHAR}, #{employeeZc,jdbcType=VARCHAR}, 
+      #{employeeYhmemo,jdbcType=VARCHAR}, #{employeeSxdate,jdbcType=TIMESTAMP}, #{employeeDszn,jdbcType=CHAR}, 
+      #{employeeZgxl,jdbcType=VARCHAR}, #{employeeJdglold,jdbcType=DECIMAL}, #{employeeJdglnew,jdbcType=DECIMAL}, 
+      #{employeeZyxhbt,jdbcType=DECIMAL}, #{employeeTfje,jdbcType=DECIMAL}, #{employeeStatedate,jdbcType=TIMESTAMP}, 
+      #{employeeZfmj,jdbcType=DECIMAL}, #{employeeUarea,jdbcType=DECIMAL}, #{employeeYhzh2,jdbcType=VARCHAR}, 
+      #{employeeKhyh2,jdbcType=VARCHAR}, #{employeeYhmemo2,jdbcType=VARCHAR}, #{employeeZcdate,jdbcType=TIMESTAMP}, 
+      #{employeePofwmj,jdbcType=DECIMAL}, #{employeeJdgl,jdbcType=DECIMAL}, #{employeeRylb,jdbcType=VARCHAR}, 
+      #{employeeTelphol,jdbcType=VARCHAR}, #{employeePhoto,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.unknow.entity.Employee" >
+    insert into employee
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="employeeSerial != null" >
+        employee_serial,
+      </if>
+      <if test="filiationSerial != null" >
+        filiation_serial,
+      </if>
+      <if test="departmentSerial != null" >
+        department_serial,
+      </if>
+      <if test="employeeName != null" >
+        employee_name,
+      </if>
+      <if test="employeeSpell != null" >
+        employee_spell,
+      </if>
+      <if test="credentialsSerial != null" >
+        credentials_serial,
+      </if>
+      <if test="employeeJdserial != null" >
+        employee_jdserial,
+      </if>
+      <if test="employeeId != null" >
+        employee_id,
+      </if>
+      <if test="employeeBirth != null" >
+        employee_birth,
+      </if>
+      <if test="employeeSex != null" >
+        employee_sex,
+      </if>
+      <if test="nationCode != null" >
+        nation_code,
+      </if>
+      <if test="polityCode != null" >
+        polity_code,
+      </if>
+      <if test="deformityCode != null" >
+        deformity_code,
+      </if>
+      <if test="employeeDegress != null" >
+        employee_degress,
+      </if>
+      <if test="employeeState != null" >
+        employee_state,
+      </if>
+      <if test="employeeMarriage != null" >
+        employee_marriage,
+      </if>
+      <if test="employeeCode != null" >
+        employee_code,
+      </if>
+      <if test="employeeAcademy != null" >
+        employee_academy,
+      </if>
+      <if test="employeeGraduate != null" >
+        employee_graduate,
+      </if>
+      <if test="employeeEnter != null" >
+        employee_enter,
+      </if>
+      <if test="employeeWork != null" >
+        employee_work,
+      </if>
+      <if test="employeeMemo != null" >
+        employee_memo,
+      </if>
+      <if test="employeeZhicheng != null" >
+        employee_zhicheng,
+      </if>
+      <if test="employeeZhiwu != null" >
+        employee_zhiwu,
+      </if>
+      <if test="employeeTuixiu != null" >
+        employee_tuixiu,
+      </if>
+      <if test="employeeAge != null" >
+        employee_age,
+      </if>
+      <if test="employeePhone != null" >
+        employee_phone,
+      </if>
+      <if test="employeeMobiletel != null" >
+        employee_mobiletel,
+      </if>
+      <if test="employeeCaiwuhao != null" >
+        employee_caiwuhao,
+      </if>
+      <if test="employeeDouble != null" >
+        employee_double,
+      </if>
+      <if test="employeeZfzgxs != null" >
+        employee_zfzgxs,
+      </if>
+      <if test="empFbGzbz != null" >
+        emp_fb_gzbz,
+      </if>
+      <if test="empFbZfbtmjbz != null" >
+        emp_fb_zfbtmjbz,
+      </if>
+      <if test="empFbSymj != null" >
+        emp_fb_symj,
+      </if>
+      <if test="empFbQcmj != null" >
+        emp_fb_qcmj,
+      </if>
+      <if test="empFbSfqk != null" >
+        emp_fb_sfqk,
+      </if>
+      <if test="empFbGjjqgl != null" >
+        emp_fb_gjjqgl,
+      </if>
+      <if test="empFbGjjqgljs != null" >
+        emp_fb_gjjqgljs,
+      </if>
+      <if test="empFbAybt != null" >
+        emp_fb_aybt,
+      </if>
+      <if test="empFbYbhj != null" >
+        emp_fb_ybhj,
+      </if>
+      <if test="empFbWfycxbt != null" >
+        emp_fb_wfycxbt,
+      </if>
+      <if test="empFbWdbycxbt != null" >
+        emp_fb_wdbycxbt,
+      </if>
+      <if test="empFbHj != null" >
+        emp_fb_hj,
+      </if>
+      <if test="empFbFh != null" >
+        emp_fb_fh,
+      </if>
+      <if test="empFbJzmj != null" >
+        emp_fb_jzmj,
+      </if>
+      <if test="empPwd != null" >
+        emp_pwd,
+      </if>
+      <if test="pwdFlag != null" >
+        pwd_flag,
+      </if>
+      <if test="zjbt != null" >
+        zjbt,
+      </if>
+      <if test="employeeWfyy != null" >
+        employee_wfyy,
+      </if>
+      <if test="employeeFfjf != null" >
+        employee_ffjf,
+      </if>
+      <if test="pmc != null" >
+        pmc,
+      </if>
+      <if test="hmc != null" >
+        hmc,
+      </if>
+      <if test="employeeSssj != null" >
+        employee_sssj,
+      </if>
+      <if test="lysj != null" >
+        lysj,
+      </if>
+      <if test="zhsj != null" >
+        zhsj,
+      </if>
+      <if test="rsbzSerial != null" >
+        rsbz_serial,
+      </if>
+      <if test="employeeZhichengLev != null" >
+        employee_zhicheng_lev,
+      </if>
+      <if test="employeeZhiwuLev != null" >
+        employee_zhiwu_lev,
+      </if>
+      <if test="isselect != null" >
+        isselect,
+      </if>
+      <if test="olddept != null" >
+        olddept,
+      </if>
+      <if test="employeeGjj != null" >
+        employee_gjj,
+      </if>
+      <if test="employeeGjjsj != null" >
+        employee_gjjsj,
+      </if>
+      <if test="employeeHksz != null" >
+        employee_hksz,
+      </if>
+      <if test="employeeEmail != null" >
+        employee_email,
+      </if>
+      <if test="employeeDwcode != null" >
+        employee_dwcode,
+      </if>
+      <if test="employeeWife != null" >
+        employee_wife,
+      </if>
+      <if test="employeeWifegzh != null" >
+        employee_wifegzh,
+      </if>
+      <if test="employeeWifename != null" >
+        employee_wifename,
+      </if>
+      <if test="employeeWifespell != null" >
+        employee_wifespell,
+      </if>
+      <if test="employeeWifeunit != null" >
+        employee_wifeunit,
+      </if>
+      <if test="employeeHouseff != null" >
+        employee_houseff,
+      </if>
+      <if test="employeeKinddate != null" >
+        employee_kinddate,
+      </if>
+      <if test="employeeFdzf != null" >
+        employee_fdzf,
+      </if>
+      <if test="employeeZfbtstat != null" >
+        employee_zfbtstat,
+      </if>
+      <if test="employeeYhzh != null" >
+        employee_yhzh,
+      </if>
+      <if test="employeeKhyh != null" >
+        employee_khyh,
+      </if>
+      <if test="employeeYcxbtje != null" >
+        employee_ycxbtje,
+      </if>
+      <if test="employeeYcxdate != null" >
+        employee_ycxdate,
+      </if>
+      <if test="employeeXqcode != null" >
+        employee_xqcode,
+      </if>
+      <if test="employeeZybtje != null" >
+        employee_zybtje,
+      </if>
+      <if test="employeeZw != null" >
+        employee_zw,
+      </if>
+      <if test="employeeZc != null" >
+        employee_zc,
+      </if>
+      <if test="employeeYhmemo != null" >
+        employee_yhmemo,
+      </if>
+      <if test="employeeSxdate != null" >
+        employee_sxdate,
+      </if>
+      <if test="employeeDszn != null" >
+        employee_dszn,
+      </if>
+      <if test="employeeZgxl != null" >
+        employee_zgxl,
+      </if>
+      <if test="employeeJdglold != null" >
+        employee_jdglold,
+      </if>
+      <if test="employeeJdglnew != null" >
+        employee_jdglnew,
+      </if>
+      <if test="employeeZyxhbt != null" >
+        employee_zyxhbt,
+      </if>
+      <if test="employeeTfje != null" >
+        employee_tfje,
+      </if>
+      <if test="employeeStatedate != null" >
+        employee_statedate,
+      </if>
+      <if test="employeeZfmj != null" >
+        employee_zfmj,
+      </if>
+      <if test="employeeUarea != null" >
+        employee_uarea,
+      </if>
+      <if test="employeeYhzh2 != null" >
+        employee_yhzh2,
+      </if>
+      <if test="employeeKhyh2 != null" >
+        employee_khyh2,
+      </if>
+      <if test="employeeYhmemo2 != null" >
+        employee_yhmemo2,
+      </if>
+      <if test="employeeZcdate != null" >
+        employee_zcdate,
+      </if>
+      <if test="employeePofwmj != null" >
+        employee_pofwmj,
+      </if>
+      <if test="employeeJdgl != null" >
+        employee_jdgl,
+      </if>
+      <if test="employeeRylb != null" >
+        employee_rylb,
+      </if>
+      <if test="employeeTelphol != null" >
+        employee_telphol,
+      </if>
+      <if test="employeePhoto != null" >
+        employee_photo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="employeeSerial != null" >
+        #{employeeSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="filiationSerial != null" >
+        #{filiationSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentSerial != null" >
+        #{departmentSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null" >
+        #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeSpell != null" >
+        #{employeeSpell,jdbcType=VARCHAR},
+      </if>
+      <if test="credentialsSerial != null" >
+        #{credentialsSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeJdserial != null" >
+        #{employeeJdserial,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null" >
+        #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeBirth != null" >
+        #{employeeBirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeSex != null" >
+        #{employeeSex,jdbcType=BIT},
+      </if>
+      <if test="nationCode != null" >
+        #{nationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="polityCode != null" >
+        #{polityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="deformityCode != null" >
+        #{deformityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeDegress != null" >
+        #{employeeDegress,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeState != null" >
+        #{employeeState,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeMarriage != null" >
+        #{employeeMarriage,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeCode != null" >
+        #{employeeCode,jdbcType=BIT},
+      </if>
+      <if test="employeeAcademy != null" >
+        #{employeeAcademy,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeGraduate != null" >
+        #{employeeGraduate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeEnter != null" >
+        #{employeeEnter,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeWork != null" >
+        #{employeeWork,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeMemo != null" >
+        #{employeeMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZhicheng != null" >
+        #{employeeZhicheng,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZhiwu != null" >
+        #{employeeZhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeTuixiu != null" >
+        #{employeeTuixiu,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeAge != null" >
+        #{employeeAge,jdbcType=INTEGER},
+      </if>
+      <if test="employeePhone != null" >
+        #{employeePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeMobiletel != null" >
+        #{employeeMobiletel,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeCaiwuhao != null" >
+        #{employeeCaiwuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeDouble != null" >
+        #{employeeDouble,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZfzgxs != null" >
+        #{employeeZfzgxs,jdbcType=NUMERIC},
+      </if>
+      <if test="empFbGzbz != null" >
+        #{empFbGzbz,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbZfbtmjbz != null" >
+        #{empFbZfbtmjbz,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbSymj != null" >
+        #{empFbSymj,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbQcmj != null" >
+        #{empFbQcmj,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbSfqk != null" >
+        #{empFbSfqk,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbGjjqgl != null" >
+        #{empFbGjjqgl,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbGjjqgljs != null" >
+        #{empFbGjjqgljs,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbAybt != null" >
+        #{empFbAybt,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbYbhj != null" >
+        #{empFbYbhj,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbWfycxbt != null" >
+        #{empFbWfycxbt,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbWdbycxbt != null" >
+        #{empFbWdbycxbt,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbHj != null" >
+        #{empFbHj,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbFh != null" >
+        #{empFbFh,jdbcType=VARCHAR},
+      </if>
+      <if test="empFbJzmj != null" >
+        #{empFbJzmj,jdbcType=DECIMAL},
+      </if>
+      <if test="empPwd != null" >
+        #{empPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdFlag != null" >
+        #{pwdFlag,jdbcType=CHAR},
+      </if>
+      <if test="zjbt != null" >
+        #{zjbt,jdbcType=NUMERIC},
+      </if>
+      <if test="employeeWfyy != null" >
+        #{employeeWfyy,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeFfjf != null" >
+        #{employeeFfjf,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc != null" >
+        #{pmc,jdbcType=INTEGER},
+      </if>
+      <if test="hmc != null" >
+        #{hmc,jdbcType=INTEGER},
+      </if>
+      <if test="employeeSssj != null" >
+        #{employeeSssj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lysj != null" >
+        #{lysj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="zhsj != null" >
+        #{zhsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rsbzSerial != null" >
+        #{rsbzSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZhichengLev != null" >
+        #{employeeZhichengLev,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZhiwuLev != null" >
+        #{employeeZhiwuLev,jdbcType=VARCHAR},
+      </if>
+      <if test="isselect != null" >
+        #{isselect,jdbcType=CHAR},
+      </if>
+      <if test="olddept != null" >
+        #{olddept,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeGjj != null" >
+        #{employeeGjj,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeGjjsj != null" >
+        #{employeeGjjsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeHksz != null" >
+        #{employeeHksz,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeEmail != null" >
+        #{employeeEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeDwcode != null" >
+        #{employeeDwcode,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeWife != null" >
+        #{employeeWife,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeWifegzh != null" >
+        #{employeeWifegzh,jdbcType=CHAR},
+      </if>
+      <if test="employeeWifename != null" >
+        #{employeeWifename,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeWifespell != null" >
+        #{employeeWifespell,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeWifeunit != null" >
+        #{employeeWifeunit,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeHouseff != null" >
+        #{employeeHouseff,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeKinddate != null" >
+        #{employeeKinddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeFdzf != null" >
+        #{employeeFdzf,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZfbtstat != null" >
+        #{employeeZfbtstat,jdbcType=CHAR},
+      </if>
+      <if test="employeeYhzh != null" >
+        #{employeeYhzh,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeKhyh != null" >
+        #{employeeKhyh,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeYcxbtje != null" >
+        #{employeeYcxbtje,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeYcxdate != null" >
+        #{employeeYcxdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeXqcode != null" >
+        #{employeeXqcode,jdbcType=CHAR},
+      </if>
+      <if test="employeeZybtje != null" >
+        #{employeeZybtje,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeZw != null" >
+        #{employeeZw,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZc != null" >
+        #{employeeZc,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeYhmemo != null" >
+        #{employeeYhmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeSxdate != null" >
+        #{employeeSxdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeDszn != null" >
+        #{employeeDszn,jdbcType=CHAR},
+      </if>
+      <if test="employeeZgxl != null" >
+        #{employeeZgxl,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeJdglold != null" >
+        #{employeeJdglold,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeJdglnew != null" >
+        #{employeeJdglnew,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeZyxhbt != null" >
+        #{employeeZyxhbt,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeTfje != null" >
+        #{employeeTfje,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeStatedate != null" >
+        #{employeeStatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeZfmj != null" >
+        #{employeeZfmj,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeUarea != null" >
+        #{employeeUarea,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeYhzh2 != null" >
+        #{employeeYhzh2,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeKhyh2 != null" >
+        #{employeeKhyh2,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeYhmemo2 != null" >
+        #{employeeYhmemo2,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZcdate != null" >
+        #{employeeZcdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeePofwmj != null" >
+        #{employeePofwmj,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeJdgl != null" >
+        #{employeeJdgl,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeRylb != null" >
+        #{employeeRylb,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeTelphol != null" >
+        #{employeeTelphol,jdbcType=VARCHAR},
+      </if>
+      <if test="employeePhoto != null" >
+        #{employeePhoto,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.unknow.entity.EmployeeExample" resultType="java.lang.Integer" >
+    select count(*) from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update employee
+    <set >
+      <if test="record.employeeSerial != null" >
+        employee_serial = #{record.employeeSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filiationSerial != null" >
+        filiation_serial = #{record.filiationSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentSerial != null" >
+        department_serial = #{record.departmentSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeName != null" >
+        employee_name = #{record.employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeSpell != null" >
+        employee_spell = #{record.employeeSpell,jdbcType=VARCHAR},
+      </if>
+      <if test="record.credentialsSerial != null" >
+        credentials_serial = #{record.credentialsSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeJdserial != null" >
+        employee_jdserial = #{record.employeeJdserial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeId != null" >
+        employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeBirth != null" >
+        employee_birth = #{record.employeeBirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeSex != null" >
+        employee_sex = #{record.employeeSex,jdbcType=BIT},
+      </if>
+      <if test="record.nationCode != null" >
+        nation_code = #{record.nationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.polityCode != null" >
+        polity_code = #{record.polityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deformityCode != null" >
+        deformity_code = #{record.deformityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeDegress != null" >
+        employee_degress = #{record.employeeDegress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeState != null" >
+        employee_state = #{record.employeeState,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeMarriage != null" >
+        employee_marriage = #{record.employeeMarriage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeCode != null" >
+        employee_code = #{record.employeeCode,jdbcType=BIT},
+      </if>
+      <if test="record.employeeAcademy != null" >
+        employee_academy = #{record.employeeAcademy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeGraduate != null" >
+        employee_graduate = #{record.employeeGraduate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeEnter != null" >
+        employee_enter = #{record.employeeEnter,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeWork != null" >
+        employee_work = #{record.employeeWork,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeMemo != null" >
+        employee_memo = #{record.employeeMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeZhicheng != null" >
+        employee_zhicheng = #{record.employeeZhicheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeZhiwu != null" >
+        employee_zhiwu = #{record.employeeZhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeTuixiu != null" >
+        employee_tuixiu = #{record.employeeTuixiu,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeAge != null" >
+        employee_age = #{record.employeeAge,jdbcType=INTEGER},
+      </if>
+      <if test="record.employeePhone != null" >
+        employee_phone = #{record.employeePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeMobiletel != null" >
+        employee_mobiletel = #{record.employeeMobiletel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeCaiwuhao != null" >
+        employee_caiwuhao = #{record.employeeCaiwuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeDouble != null" >
+        employee_double = #{record.employeeDouble,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeZfzgxs != null" >
+        employee_zfzgxs = #{record.employeeZfzgxs,jdbcType=NUMERIC},
+      </if>
+      <if test="record.empFbGzbz != null" >
+        emp_fb_gzbz = #{record.empFbGzbz,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbZfbtmjbz != null" >
+        emp_fb_zfbtmjbz = #{record.empFbZfbtmjbz,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbSymj != null" >
+        emp_fb_symj = #{record.empFbSymj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbQcmj != null" >
+        emp_fb_qcmj = #{record.empFbQcmj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbSfqk != null" >
+        emp_fb_sfqk = #{record.empFbSfqk,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbGjjqgl != null" >
+        emp_fb_gjjqgl = #{record.empFbGjjqgl,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbGjjqgljs != null" >
+        emp_fb_gjjqgljs = #{record.empFbGjjqgljs,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbAybt != null" >
+        emp_fb_aybt = #{record.empFbAybt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbYbhj != null" >
+        emp_fb_ybhj = #{record.empFbYbhj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbWfycxbt != null" >
+        emp_fb_wfycxbt = #{record.empFbWfycxbt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbWdbycxbt != null" >
+        emp_fb_wdbycxbt = #{record.empFbWdbycxbt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbHj != null" >
+        emp_fb_hj = #{record.empFbHj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empFbFh != null" >
+        emp_fb_fh = #{record.empFbFh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.empFbJzmj != null" >
+        emp_fb_jzmj = #{record.empFbJzmj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empPwd != null" >
+        emp_pwd = #{record.empPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pwdFlag != null" >
+        pwd_flag = #{record.pwdFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.zjbt != null" >
+        zjbt = #{record.zjbt,jdbcType=NUMERIC},
+      </if>
+      <if test="record.employeeWfyy != null" >
+        employee_wfyy = #{record.employeeWfyy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeFfjf != null" >
+        employee_ffjf = #{record.employeeFfjf,jdbcType=DECIMAL},
+      </if>
+      <if test="record.pmc != null" >
+        pmc = #{record.pmc,jdbcType=INTEGER},
+      </if>
+      <if test="record.hmc != null" >
+        hmc = #{record.hmc,jdbcType=INTEGER},
+      </if>
+      <if test="record.employeeSssj != null" >
+        employee_sssj = #{record.employeeSssj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lysj != null" >
+        lysj = #{record.lysj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.zhsj != null" >
+        zhsj = #{record.zhsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rsbzSerial != null" >
+        rsbz_serial = #{record.rsbzSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeZhichengLev != null" >
+        employee_zhicheng_lev = #{record.employeeZhichengLev,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeZhiwuLev != null" >
+        employee_zhiwu_lev = #{record.employeeZhiwuLev,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isselect != null" >
+        isselect = #{record.isselect,jdbcType=CHAR},
+      </if>
+      <if test="record.olddept != null" >
+        olddept = #{record.olddept,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeGjj != null" >
+        employee_gjj = #{record.employeeGjj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeGjjsj != null" >
+        employee_gjjsj = #{record.employeeGjjsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeHksz != null" >
+        employee_hksz = #{record.employeeHksz,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeEmail != null" >
+        employee_email = #{record.employeeEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeDwcode != null" >
+        employee_dwcode = #{record.employeeDwcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeWife != null" >
+        employee_wife = #{record.employeeWife,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeWifegzh != null" >
+        employee_wifegzh = #{record.employeeWifegzh,jdbcType=CHAR},
+      </if>
+      <if test="record.employeeWifename != null" >
+        employee_wifename = #{record.employeeWifename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeWifespell != null" >
+        employee_wifespell = #{record.employeeWifespell,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeWifeunit != null" >
+        employee_wifeunit = #{record.employeeWifeunit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeHouseff != null" >
+        employee_houseff = #{record.employeeHouseff,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeKinddate != null" >
+        employee_kinddate = #{record.employeeKinddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeFdzf != null" >
+        employee_fdzf = #{record.employeeFdzf,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeZfbtstat != null" >
+        employee_zfbtstat = #{record.employeeZfbtstat,jdbcType=CHAR},
+      </if>
+      <if test="record.employeeYhzh != null" >
+        employee_yhzh = #{record.employeeYhzh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeKhyh != null" >
+        employee_khyh = #{record.employeeKhyh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeYcxbtje != null" >
+        employee_ycxbtje = #{record.employeeYcxbtje,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeYcxdate != null" >
+        employee_ycxdate = #{record.employeeYcxdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeXqcode != null" >
+        employee_xqcode = #{record.employeeXqcode,jdbcType=CHAR},
+      </if>
+      <if test="record.employeeZybtje != null" >
+        employee_zybtje = #{record.employeeZybtje,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeZw != null" >
+        employee_zw = #{record.employeeZw,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeZc != null" >
+        employee_zc = #{record.employeeZc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeYhmemo != null" >
+        employee_yhmemo = #{record.employeeYhmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeSxdate != null" >
+        employee_sxdate = #{record.employeeSxdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeDszn != null" >
+        employee_dszn = #{record.employeeDszn,jdbcType=CHAR},
+      </if>
+      <if test="record.employeeZgxl != null" >
+        employee_zgxl = #{record.employeeZgxl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeJdglold != null" >
+        employee_jdglold = #{record.employeeJdglold,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeJdglnew != null" >
+        employee_jdglnew = #{record.employeeJdglnew,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeZyxhbt != null" >
+        employee_zyxhbt = #{record.employeeZyxhbt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeTfje != null" >
+        employee_tfje = #{record.employeeTfje,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeStatedate != null" >
+        employee_statedate = #{record.employeeStatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeeZfmj != null" >
+        employee_zfmj = #{record.employeeZfmj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeUarea != null" >
+        employee_uarea = #{record.employeeUarea,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeYhzh2 != null" >
+        employee_yhzh2 = #{record.employeeYhzh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeKhyh2 != null" >
+        employee_khyh2 = #{record.employeeKhyh2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeYhmemo2 != null" >
+        employee_yhmemo2 = #{record.employeeYhmemo2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeZcdate != null" >
+        employee_zcdate = #{record.employeeZcdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.employeePofwmj != null" >
+        employee_pofwmj = #{record.employeePofwmj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeJdgl != null" >
+        employee_jdgl = #{record.employeeJdgl,jdbcType=DECIMAL},
+      </if>
+      <if test="record.employeeRylb != null" >
+        employee_rylb = #{record.employeeRylb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeTelphol != null" >
+        employee_telphol = #{record.employeeTelphol,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeePhoto != null" >
+        employee_photo = #{record.employeePhoto,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update employee
+    set employee_serial = #{record.employeeSerial,jdbcType=VARCHAR},
+      filiation_serial = #{record.filiationSerial,jdbcType=VARCHAR},
+      department_serial = #{record.departmentSerial,jdbcType=VARCHAR},
+      employee_name = #{record.employeeName,jdbcType=VARCHAR},
+      employee_spell = #{record.employeeSpell,jdbcType=VARCHAR},
+      credentials_serial = #{record.credentialsSerial,jdbcType=VARCHAR},
+      employee_jdserial = #{record.employeeJdserial,jdbcType=VARCHAR},
+      employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      employee_birth = #{record.employeeBirth,jdbcType=TIMESTAMP},
+      employee_sex = #{record.employeeSex,jdbcType=BIT},
+      nation_code = #{record.nationCode,jdbcType=VARCHAR},
+      polity_code = #{record.polityCode,jdbcType=VARCHAR},
+      deformity_code = #{record.deformityCode,jdbcType=VARCHAR},
+      employee_degress = #{record.employeeDegress,jdbcType=VARCHAR},
+      employee_state = #{record.employeeState,jdbcType=VARCHAR},
+      employee_marriage = #{record.employeeMarriage,jdbcType=VARCHAR},
+      employee_code = #{record.employeeCode,jdbcType=BIT},
+      employee_academy = #{record.employeeAcademy,jdbcType=VARCHAR},
+      employee_graduate = #{record.employeeGraduate,jdbcType=TIMESTAMP},
+      employee_enter = #{record.employeeEnter,jdbcType=TIMESTAMP},
+      employee_work = #{record.employeeWork,jdbcType=TIMESTAMP},
+      employee_memo = #{record.employeeMemo,jdbcType=VARCHAR},
+      employee_zhicheng = #{record.employeeZhicheng,jdbcType=VARCHAR},
+      employee_zhiwu = #{record.employeeZhiwu,jdbcType=VARCHAR},
+      employee_tuixiu = #{record.employeeTuixiu,jdbcType=TIMESTAMP},
+      employee_age = #{record.employeeAge,jdbcType=INTEGER},
+      employee_phone = #{record.employeePhone,jdbcType=VARCHAR},
+      employee_mobiletel = #{record.employeeMobiletel,jdbcType=VARCHAR},
+      employee_caiwuhao = #{record.employeeCaiwuhao,jdbcType=VARCHAR},
+      employee_double = #{record.employeeDouble,jdbcType=VARCHAR},
+      employee_zfzgxs = #{record.employeeZfzgxs,jdbcType=NUMERIC},
+      emp_fb_gzbz = #{record.empFbGzbz,jdbcType=DECIMAL},
+      emp_fb_zfbtmjbz = #{record.empFbZfbtmjbz,jdbcType=DECIMAL},
+      emp_fb_symj = #{record.empFbSymj,jdbcType=DECIMAL},
+      emp_fb_qcmj = #{record.empFbQcmj,jdbcType=DECIMAL},
+      emp_fb_sfqk = #{record.empFbSfqk,jdbcType=DECIMAL},
+      emp_fb_gjjqgl = #{record.empFbGjjqgl,jdbcType=DECIMAL},
+      emp_fb_gjjqgljs = #{record.empFbGjjqgljs,jdbcType=DECIMAL},
+      emp_fb_aybt = #{record.empFbAybt,jdbcType=DECIMAL},
+      emp_fb_ybhj = #{record.empFbYbhj,jdbcType=DECIMAL},
+      emp_fb_wfycxbt = #{record.empFbWfycxbt,jdbcType=DECIMAL},
+      emp_fb_wdbycxbt = #{record.empFbWdbycxbt,jdbcType=DECIMAL},
+      emp_fb_hj = #{record.empFbHj,jdbcType=DECIMAL},
+      emp_fb_fh = #{record.empFbFh,jdbcType=VARCHAR},
+      emp_fb_jzmj = #{record.empFbJzmj,jdbcType=DECIMAL},
+      emp_pwd = #{record.empPwd,jdbcType=VARCHAR},
+      pwd_flag = #{record.pwdFlag,jdbcType=CHAR},
+      zjbt = #{record.zjbt,jdbcType=NUMERIC},
+      employee_wfyy = #{record.employeeWfyy,jdbcType=VARCHAR},
+      employee_ffjf = #{record.employeeFfjf,jdbcType=DECIMAL},
+      pmc = #{record.pmc,jdbcType=INTEGER},
+      hmc = #{record.hmc,jdbcType=INTEGER},
+      employee_sssj = #{record.employeeSssj,jdbcType=TIMESTAMP},
+      lysj = #{record.lysj,jdbcType=TIMESTAMP},
+      zhsj = #{record.zhsj,jdbcType=TIMESTAMP},
+      rsbz_serial = #{record.rsbzSerial,jdbcType=VARCHAR},
+      employee_zhicheng_lev = #{record.employeeZhichengLev,jdbcType=VARCHAR},
+      employee_zhiwu_lev = #{record.employeeZhiwuLev,jdbcType=VARCHAR},
+      isselect = #{record.isselect,jdbcType=CHAR},
+      olddept = #{record.olddept,jdbcType=VARCHAR},
+      employee_gjj = #{record.employeeGjj,jdbcType=DECIMAL},
+      employee_gjjsj = #{record.employeeGjjsj,jdbcType=TIMESTAMP},
+      employee_hksz = #{record.employeeHksz,jdbcType=VARCHAR},
+      employee_email = #{record.employeeEmail,jdbcType=VARCHAR},
+      employee_dwcode = #{record.employeeDwcode,jdbcType=VARCHAR},
+      employee_wife = #{record.employeeWife,jdbcType=VARCHAR},
+      employee_wifegzh = #{record.employeeWifegzh,jdbcType=CHAR},
+      employee_wifename = #{record.employeeWifename,jdbcType=VARCHAR},
+      employee_wifespell = #{record.employeeWifespell,jdbcType=VARCHAR},
+      employee_wifeunit = #{record.employeeWifeunit,jdbcType=VARCHAR},
+      employee_houseff = #{record.employeeHouseff,jdbcType=VARCHAR},
+      employee_kinddate = #{record.employeeKinddate,jdbcType=TIMESTAMP},
+      employee_fdzf = #{record.employeeFdzf,jdbcType=VARCHAR},
+      employee_zfbtstat = #{record.employeeZfbtstat,jdbcType=CHAR},
+      employee_yhzh = #{record.employeeYhzh,jdbcType=VARCHAR},
+      employee_khyh = #{record.employeeKhyh,jdbcType=VARCHAR},
+      employee_ycxbtje = #{record.employeeYcxbtje,jdbcType=DECIMAL},
+      employee_ycxdate = #{record.employeeYcxdate,jdbcType=TIMESTAMP},
+      employee_xqcode = #{record.employeeXqcode,jdbcType=CHAR},
+      employee_zybtje = #{record.employeeZybtje,jdbcType=DECIMAL},
+      employee_zw = #{record.employeeZw,jdbcType=VARCHAR},
+      employee_zc = #{record.employeeZc,jdbcType=VARCHAR},
+      employee_yhmemo = #{record.employeeYhmemo,jdbcType=VARCHAR},
+      employee_sxdate = #{record.employeeSxdate,jdbcType=TIMESTAMP},
+      employee_dszn = #{record.employeeDszn,jdbcType=CHAR},
+      employee_zgxl = #{record.employeeZgxl,jdbcType=VARCHAR},
+      employee_jdglold = #{record.employeeJdglold,jdbcType=DECIMAL},
+      employee_jdglnew = #{record.employeeJdglnew,jdbcType=DECIMAL},
+      employee_zyxhbt = #{record.employeeZyxhbt,jdbcType=DECIMAL},
+      employee_tfje = #{record.employeeTfje,jdbcType=DECIMAL},
+      employee_statedate = #{record.employeeStatedate,jdbcType=TIMESTAMP},
+      employee_zfmj = #{record.employeeZfmj,jdbcType=DECIMAL},
+      employee_uarea = #{record.employeeUarea,jdbcType=DECIMAL},
+      employee_yhzh2 = #{record.employeeYhzh2,jdbcType=VARCHAR},
+      employee_khyh2 = #{record.employeeKhyh2,jdbcType=VARCHAR},
+      employee_yhmemo2 = #{record.employeeYhmemo2,jdbcType=VARCHAR},
+      employee_zcdate = #{record.employeeZcdate,jdbcType=TIMESTAMP},
+      employee_pofwmj = #{record.employeePofwmj,jdbcType=DECIMAL},
+      employee_jdgl = #{record.employeeJdgl,jdbcType=DECIMAL},
+      employee_rylb = #{record.employeeRylb,jdbcType=VARCHAR},
+      employee_telphol = #{record.employeeTelphol,jdbcType=VARCHAR},
+      employee_photo = #{record.employeePhoto,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update employee
+    set employee_serial = #{record.employeeSerial,jdbcType=VARCHAR},
+      filiation_serial = #{record.filiationSerial,jdbcType=VARCHAR},
+      department_serial = #{record.departmentSerial,jdbcType=VARCHAR},
+      employee_name = #{record.employeeName,jdbcType=VARCHAR},
+      employee_spell = #{record.employeeSpell,jdbcType=VARCHAR},
+      credentials_serial = #{record.credentialsSerial,jdbcType=VARCHAR},
+      employee_jdserial = #{record.employeeJdserial,jdbcType=VARCHAR},
+      employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      employee_birth = #{record.employeeBirth,jdbcType=TIMESTAMP},
+      employee_sex = #{record.employeeSex,jdbcType=BIT},
+      nation_code = #{record.nationCode,jdbcType=VARCHAR},
+      polity_code = #{record.polityCode,jdbcType=VARCHAR},
+      deformity_code = #{record.deformityCode,jdbcType=VARCHAR},
+      employee_degress = #{record.employeeDegress,jdbcType=VARCHAR},
+      employee_state = #{record.employeeState,jdbcType=VARCHAR},
+      employee_marriage = #{record.employeeMarriage,jdbcType=VARCHAR},
+      employee_code = #{record.employeeCode,jdbcType=BIT},
+      employee_academy = #{record.employeeAcademy,jdbcType=VARCHAR},
+      employee_graduate = #{record.employeeGraduate,jdbcType=TIMESTAMP},
+      employee_enter = #{record.employeeEnter,jdbcType=TIMESTAMP},
+      employee_work = #{record.employeeWork,jdbcType=TIMESTAMP},
+      employee_memo = #{record.employeeMemo,jdbcType=VARCHAR},
+      employee_zhicheng = #{record.employeeZhicheng,jdbcType=VARCHAR},
+      employee_zhiwu = #{record.employeeZhiwu,jdbcType=VARCHAR},
+      employee_tuixiu = #{record.employeeTuixiu,jdbcType=TIMESTAMP},
+      employee_age = #{record.employeeAge,jdbcType=INTEGER},
+      employee_phone = #{record.employeePhone,jdbcType=VARCHAR},
+      employee_mobiletel = #{record.employeeMobiletel,jdbcType=VARCHAR},
+      employee_caiwuhao = #{record.employeeCaiwuhao,jdbcType=VARCHAR},
+      employee_double = #{record.employeeDouble,jdbcType=VARCHAR},
+      employee_zfzgxs = #{record.employeeZfzgxs,jdbcType=NUMERIC},
+      emp_fb_gzbz = #{record.empFbGzbz,jdbcType=DECIMAL},
+      emp_fb_zfbtmjbz = #{record.empFbZfbtmjbz,jdbcType=DECIMAL},
+      emp_fb_symj = #{record.empFbSymj,jdbcType=DECIMAL},
+      emp_fb_qcmj = #{record.empFbQcmj,jdbcType=DECIMAL},
+      emp_fb_sfqk = #{record.empFbSfqk,jdbcType=DECIMAL},
+      emp_fb_gjjqgl = #{record.empFbGjjqgl,jdbcType=DECIMAL},
+      emp_fb_gjjqgljs = #{record.empFbGjjqgljs,jdbcType=DECIMAL},
+      emp_fb_aybt = #{record.empFbAybt,jdbcType=DECIMAL},
+      emp_fb_ybhj = #{record.empFbYbhj,jdbcType=DECIMAL},
+      emp_fb_wfycxbt = #{record.empFbWfycxbt,jdbcType=DECIMAL},
+      emp_fb_wdbycxbt = #{record.empFbWdbycxbt,jdbcType=DECIMAL},
+      emp_fb_hj = #{record.empFbHj,jdbcType=DECIMAL},
+      emp_fb_fh = #{record.empFbFh,jdbcType=VARCHAR},
+      emp_fb_jzmj = #{record.empFbJzmj,jdbcType=DECIMAL},
+      emp_pwd = #{record.empPwd,jdbcType=VARCHAR},
+      pwd_flag = #{record.pwdFlag,jdbcType=CHAR},
+      zjbt = #{record.zjbt,jdbcType=NUMERIC},
+      employee_wfyy = #{record.employeeWfyy,jdbcType=VARCHAR},
+      employee_ffjf = #{record.employeeFfjf,jdbcType=DECIMAL},
+      pmc = #{record.pmc,jdbcType=INTEGER},
+      hmc = #{record.hmc,jdbcType=INTEGER},
+      employee_sssj = #{record.employeeSssj,jdbcType=TIMESTAMP},
+      lysj = #{record.lysj,jdbcType=TIMESTAMP},
+      zhsj = #{record.zhsj,jdbcType=TIMESTAMP},
+      rsbz_serial = #{record.rsbzSerial,jdbcType=VARCHAR},
+      employee_zhicheng_lev = #{record.employeeZhichengLev,jdbcType=VARCHAR},
+      employee_zhiwu_lev = #{record.employeeZhiwuLev,jdbcType=VARCHAR},
+      isselect = #{record.isselect,jdbcType=CHAR},
+      olddept = #{record.olddept,jdbcType=VARCHAR},
+      employee_gjj = #{record.employeeGjj,jdbcType=DECIMAL},
+      employee_gjjsj = #{record.employeeGjjsj,jdbcType=TIMESTAMP},
+      employee_hksz = #{record.employeeHksz,jdbcType=VARCHAR},
+      employee_email = #{record.employeeEmail,jdbcType=VARCHAR},
+      employee_dwcode = #{record.employeeDwcode,jdbcType=VARCHAR},
+      employee_wife = #{record.employeeWife,jdbcType=VARCHAR},
+      employee_wifegzh = #{record.employeeWifegzh,jdbcType=CHAR},
+      employee_wifename = #{record.employeeWifename,jdbcType=VARCHAR},
+      employee_wifespell = #{record.employeeWifespell,jdbcType=VARCHAR},
+      employee_wifeunit = #{record.employeeWifeunit,jdbcType=VARCHAR},
+      employee_houseff = #{record.employeeHouseff,jdbcType=VARCHAR},
+      employee_kinddate = #{record.employeeKinddate,jdbcType=TIMESTAMP},
+      employee_fdzf = #{record.employeeFdzf,jdbcType=VARCHAR},
+      employee_zfbtstat = #{record.employeeZfbtstat,jdbcType=CHAR},
+      employee_yhzh = #{record.employeeYhzh,jdbcType=VARCHAR},
+      employee_khyh = #{record.employeeKhyh,jdbcType=VARCHAR},
+      employee_ycxbtje = #{record.employeeYcxbtje,jdbcType=DECIMAL},
+      employee_ycxdate = #{record.employeeYcxdate,jdbcType=TIMESTAMP},
+      employee_xqcode = #{record.employeeXqcode,jdbcType=CHAR},
+      employee_zybtje = #{record.employeeZybtje,jdbcType=DECIMAL},
+      employee_zw = #{record.employeeZw,jdbcType=VARCHAR},
+      employee_zc = #{record.employeeZc,jdbcType=VARCHAR},
+      employee_yhmemo = #{record.employeeYhmemo,jdbcType=VARCHAR},
+      employee_sxdate = #{record.employeeSxdate,jdbcType=TIMESTAMP},
+      employee_dszn = #{record.employeeDszn,jdbcType=CHAR},
+      employee_zgxl = #{record.employeeZgxl,jdbcType=VARCHAR},
+      employee_jdglold = #{record.employeeJdglold,jdbcType=DECIMAL},
+      employee_jdglnew = #{record.employeeJdglnew,jdbcType=DECIMAL},
+      employee_zyxhbt = #{record.employeeZyxhbt,jdbcType=DECIMAL},
+      employee_tfje = #{record.employeeTfje,jdbcType=DECIMAL},
+      employee_statedate = #{record.employeeStatedate,jdbcType=TIMESTAMP},
+      employee_zfmj = #{record.employeeZfmj,jdbcType=DECIMAL},
+      employee_uarea = #{record.employeeUarea,jdbcType=DECIMAL},
+      employee_yhzh2 = #{record.employeeYhzh2,jdbcType=VARCHAR},
+      employee_khyh2 = #{record.employeeKhyh2,jdbcType=VARCHAR},
+      employee_yhmemo2 = #{record.employeeYhmemo2,jdbcType=VARCHAR},
+      employee_zcdate = #{record.employeeZcdate,jdbcType=TIMESTAMP},
+      employee_pofwmj = #{record.employeePofwmj,jdbcType=DECIMAL},
+      employee_jdgl = #{record.employeeJdgl,jdbcType=DECIMAL},
+      employee_rylb = #{record.employeeRylb,jdbcType=VARCHAR},
+      employee_telphol = #{record.employeeTelphol,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.unknow.entity.Employee" >
+    update employee
+    <set >
+      <if test="filiationSerial != null" >
+        filiation_serial = #{filiationSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentSerial != null" >
+        department_serial = #{departmentSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null" >
+        employee_name = #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeSpell != null" >
+        employee_spell = #{employeeSpell,jdbcType=VARCHAR},
+      </if>
+      <if test="credentialsSerial != null" >
+        credentials_serial = #{credentialsSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeJdserial != null" >
+        employee_jdserial = #{employeeJdserial,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null" >
+        employee_id = #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeBirth != null" >
+        employee_birth = #{employeeBirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeSex != null" >
+        employee_sex = #{employeeSex,jdbcType=BIT},
+      </if>
+      <if test="nationCode != null" >
+        nation_code = #{nationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="polityCode != null" >
+        polity_code = #{polityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="deformityCode != null" >
+        deformity_code = #{deformityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeDegress != null" >
+        employee_degress = #{employeeDegress,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeState != null" >
+        employee_state = #{employeeState,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeMarriage != null" >
+        employee_marriage = #{employeeMarriage,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeCode != null" >
+        employee_code = #{employeeCode,jdbcType=BIT},
+      </if>
+      <if test="employeeAcademy != null" >
+        employee_academy = #{employeeAcademy,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeGraduate != null" >
+        employee_graduate = #{employeeGraduate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeEnter != null" >
+        employee_enter = #{employeeEnter,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeWork != null" >
+        employee_work = #{employeeWork,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeMemo != null" >
+        employee_memo = #{employeeMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZhicheng != null" >
+        employee_zhicheng = #{employeeZhicheng,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZhiwu != null" >
+        employee_zhiwu = #{employeeZhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeTuixiu != null" >
+        employee_tuixiu = #{employeeTuixiu,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeAge != null" >
+        employee_age = #{employeeAge,jdbcType=INTEGER},
+      </if>
+      <if test="employeePhone != null" >
+        employee_phone = #{employeePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeMobiletel != null" >
+        employee_mobiletel = #{employeeMobiletel,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeCaiwuhao != null" >
+        employee_caiwuhao = #{employeeCaiwuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeDouble != null" >
+        employee_double = #{employeeDouble,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZfzgxs != null" >
+        employee_zfzgxs = #{employeeZfzgxs,jdbcType=NUMERIC},
+      </if>
+      <if test="empFbGzbz != null" >
+        emp_fb_gzbz = #{empFbGzbz,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbZfbtmjbz != null" >
+        emp_fb_zfbtmjbz = #{empFbZfbtmjbz,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbSymj != null" >
+        emp_fb_symj = #{empFbSymj,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbQcmj != null" >
+        emp_fb_qcmj = #{empFbQcmj,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbSfqk != null" >
+        emp_fb_sfqk = #{empFbSfqk,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbGjjqgl != null" >
+        emp_fb_gjjqgl = #{empFbGjjqgl,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbGjjqgljs != null" >
+        emp_fb_gjjqgljs = #{empFbGjjqgljs,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbAybt != null" >
+        emp_fb_aybt = #{empFbAybt,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbYbhj != null" >
+        emp_fb_ybhj = #{empFbYbhj,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbWfycxbt != null" >
+        emp_fb_wfycxbt = #{empFbWfycxbt,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbWdbycxbt != null" >
+        emp_fb_wdbycxbt = #{empFbWdbycxbt,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbHj != null" >
+        emp_fb_hj = #{empFbHj,jdbcType=DECIMAL},
+      </if>
+      <if test="empFbFh != null" >
+        emp_fb_fh = #{empFbFh,jdbcType=VARCHAR},
+      </if>
+      <if test="empFbJzmj != null" >
+        emp_fb_jzmj = #{empFbJzmj,jdbcType=DECIMAL},
+      </if>
+      <if test="empPwd != null" >
+        emp_pwd = #{empPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdFlag != null" >
+        pwd_flag = #{pwdFlag,jdbcType=CHAR},
+      </if>
+      <if test="zjbt != null" >
+        zjbt = #{zjbt,jdbcType=NUMERIC},
+      </if>
+      <if test="employeeWfyy != null" >
+        employee_wfyy = #{employeeWfyy,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeFfjf != null" >
+        employee_ffjf = #{employeeFfjf,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc != null" >
+        pmc = #{pmc,jdbcType=INTEGER},
+      </if>
+      <if test="hmc != null" >
+        hmc = #{hmc,jdbcType=INTEGER},
+      </if>
+      <if test="employeeSssj != null" >
+        employee_sssj = #{employeeSssj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lysj != null" >
+        lysj = #{lysj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="zhsj != null" >
+        zhsj = #{zhsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rsbzSerial != null" >
+        rsbz_serial = #{rsbzSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZhichengLev != null" >
+        employee_zhicheng_lev = #{employeeZhichengLev,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZhiwuLev != null" >
+        employee_zhiwu_lev = #{employeeZhiwuLev,jdbcType=VARCHAR},
+      </if>
+      <if test="isselect != null" >
+        isselect = #{isselect,jdbcType=CHAR},
+      </if>
+      <if test="olddept != null" >
+        olddept = #{olddept,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeGjj != null" >
+        employee_gjj = #{employeeGjj,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeGjjsj != null" >
+        employee_gjjsj = #{employeeGjjsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeHksz != null" >
+        employee_hksz = #{employeeHksz,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeEmail != null" >
+        employee_email = #{employeeEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeDwcode != null" >
+        employee_dwcode = #{employeeDwcode,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeWife != null" >
+        employee_wife = #{employeeWife,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeWifegzh != null" >
+        employee_wifegzh = #{employeeWifegzh,jdbcType=CHAR},
+      </if>
+      <if test="employeeWifename != null" >
+        employee_wifename = #{employeeWifename,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeWifespell != null" >
+        employee_wifespell = #{employeeWifespell,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeWifeunit != null" >
+        employee_wifeunit = #{employeeWifeunit,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeHouseff != null" >
+        employee_houseff = #{employeeHouseff,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeKinddate != null" >
+        employee_kinddate = #{employeeKinddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeFdzf != null" >
+        employee_fdzf = #{employeeFdzf,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZfbtstat != null" >
+        employee_zfbtstat = #{employeeZfbtstat,jdbcType=CHAR},
+      </if>
+      <if test="employeeYhzh != null" >
+        employee_yhzh = #{employeeYhzh,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeKhyh != null" >
+        employee_khyh = #{employeeKhyh,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeYcxbtje != null" >
+        employee_ycxbtje = #{employeeYcxbtje,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeYcxdate != null" >
+        employee_ycxdate = #{employeeYcxdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeXqcode != null" >
+        employee_xqcode = #{employeeXqcode,jdbcType=CHAR},
+      </if>
+      <if test="employeeZybtje != null" >
+        employee_zybtje = #{employeeZybtje,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeZw != null" >
+        employee_zw = #{employeeZw,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZc != null" >
+        employee_zc = #{employeeZc,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeYhmemo != null" >
+        employee_yhmemo = #{employeeYhmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeSxdate != null" >
+        employee_sxdate = #{employeeSxdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeDszn != null" >
+        employee_dszn = #{employeeDszn,jdbcType=CHAR},
+      </if>
+      <if test="employeeZgxl != null" >
+        employee_zgxl = #{employeeZgxl,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeJdglold != null" >
+        employee_jdglold = #{employeeJdglold,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeJdglnew != null" >
+        employee_jdglnew = #{employeeJdglnew,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeZyxhbt != null" >
+        employee_zyxhbt = #{employeeZyxhbt,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeTfje != null" >
+        employee_tfje = #{employeeTfje,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeStatedate != null" >
+        employee_statedate = #{employeeStatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeZfmj != null" >
+        employee_zfmj = #{employeeZfmj,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeUarea != null" >
+        employee_uarea = #{employeeUarea,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeYhzh2 != null" >
+        employee_yhzh2 = #{employeeYhzh2,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeKhyh2 != null" >
+        employee_khyh2 = #{employeeKhyh2,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeYhmemo2 != null" >
+        employee_yhmemo2 = #{employeeYhmemo2,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeZcdate != null" >
+        employee_zcdate = #{employeeZcdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeePofwmj != null" >
+        employee_pofwmj = #{employeePofwmj,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeJdgl != null" >
+        employee_jdgl = #{employeeJdgl,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeRylb != null" >
+        employee_rylb = #{employeeRylb,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeTelphol != null" >
+        employee_telphol = #{employeeTelphol,jdbcType=VARCHAR},
+      </if>
+      <if test="employeePhoto != null" >
+        employee_photo = #{employeePhoto,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where employee_serial = #{employeeSerial,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.unknow.entity.Employee" >
+    update employee
+    set filiation_serial = #{filiationSerial,jdbcType=VARCHAR},
+      department_serial = #{departmentSerial,jdbcType=VARCHAR},
+      employee_name = #{employeeName,jdbcType=VARCHAR},
+      employee_spell = #{employeeSpell,jdbcType=VARCHAR},
+      credentials_serial = #{credentialsSerial,jdbcType=VARCHAR},
+      employee_jdserial = #{employeeJdserial,jdbcType=VARCHAR},
+      employee_id = #{employeeId,jdbcType=VARCHAR},
+      employee_birth = #{employeeBirth,jdbcType=TIMESTAMP},
+      employee_sex = #{employeeSex,jdbcType=BIT},
+      nation_code = #{nationCode,jdbcType=VARCHAR},
+      polity_code = #{polityCode,jdbcType=VARCHAR},
+      deformity_code = #{deformityCode,jdbcType=VARCHAR},
+      employee_degress = #{employeeDegress,jdbcType=VARCHAR},
+      employee_state = #{employeeState,jdbcType=VARCHAR},
+      employee_marriage = #{employeeMarriage,jdbcType=VARCHAR},
+      employee_code = #{employeeCode,jdbcType=BIT},
+      employee_academy = #{employeeAcademy,jdbcType=VARCHAR},
+      employee_graduate = #{employeeGraduate,jdbcType=TIMESTAMP},
+      employee_enter = #{employeeEnter,jdbcType=TIMESTAMP},
+      employee_work = #{employeeWork,jdbcType=TIMESTAMP},
+      employee_memo = #{employeeMemo,jdbcType=VARCHAR},
+      employee_zhicheng = #{employeeZhicheng,jdbcType=VARCHAR},
+      employee_zhiwu = #{employeeZhiwu,jdbcType=VARCHAR},
+      employee_tuixiu = #{employeeTuixiu,jdbcType=TIMESTAMP},
+      employee_age = #{employeeAge,jdbcType=INTEGER},
+      employee_phone = #{employeePhone,jdbcType=VARCHAR},
+      employee_mobiletel = #{employeeMobiletel,jdbcType=VARCHAR},
+      employee_caiwuhao = #{employeeCaiwuhao,jdbcType=VARCHAR},
+      employee_double = #{employeeDouble,jdbcType=VARCHAR},
+      employee_zfzgxs = #{employeeZfzgxs,jdbcType=NUMERIC},
+      emp_fb_gzbz = #{empFbGzbz,jdbcType=DECIMAL},
+      emp_fb_zfbtmjbz = #{empFbZfbtmjbz,jdbcType=DECIMAL},
+      emp_fb_symj = #{empFbSymj,jdbcType=DECIMAL},
+      emp_fb_qcmj = #{empFbQcmj,jdbcType=DECIMAL},
+      emp_fb_sfqk = #{empFbSfqk,jdbcType=DECIMAL},
+      emp_fb_gjjqgl = #{empFbGjjqgl,jdbcType=DECIMAL},
+      emp_fb_gjjqgljs = #{empFbGjjqgljs,jdbcType=DECIMAL},
+      emp_fb_aybt = #{empFbAybt,jdbcType=DECIMAL},
+      emp_fb_ybhj = #{empFbYbhj,jdbcType=DECIMAL},
+      emp_fb_wfycxbt = #{empFbWfycxbt,jdbcType=DECIMAL},
+      emp_fb_wdbycxbt = #{empFbWdbycxbt,jdbcType=DECIMAL},
+      emp_fb_hj = #{empFbHj,jdbcType=DECIMAL},
+      emp_fb_fh = #{empFbFh,jdbcType=VARCHAR},
+      emp_fb_jzmj = #{empFbJzmj,jdbcType=DECIMAL},
+      emp_pwd = #{empPwd,jdbcType=VARCHAR},
+      pwd_flag = #{pwdFlag,jdbcType=CHAR},
+      zjbt = #{zjbt,jdbcType=NUMERIC},
+      employee_wfyy = #{employeeWfyy,jdbcType=VARCHAR},
+      employee_ffjf = #{employeeFfjf,jdbcType=DECIMAL},
+      pmc = #{pmc,jdbcType=INTEGER},
+      hmc = #{hmc,jdbcType=INTEGER},
+      employee_sssj = #{employeeSssj,jdbcType=TIMESTAMP},
+      lysj = #{lysj,jdbcType=TIMESTAMP},
+      zhsj = #{zhsj,jdbcType=TIMESTAMP},
+      rsbz_serial = #{rsbzSerial,jdbcType=VARCHAR},
+      employee_zhicheng_lev = #{employeeZhichengLev,jdbcType=VARCHAR},
+      employee_zhiwu_lev = #{employeeZhiwuLev,jdbcType=VARCHAR},
+      isselect = #{isselect,jdbcType=CHAR},
+      olddept = #{olddept,jdbcType=VARCHAR},
+      employee_gjj = #{employeeGjj,jdbcType=DECIMAL},
+      employee_gjjsj = #{employeeGjjsj,jdbcType=TIMESTAMP},
+      employee_hksz = #{employeeHksz,jdbcType=VARCHAR},
+      employee_email = #{employeeEmail,jdbcType=VARCHAR},
+      employee_dwcode = #{employeeDwcode,jdbcType=VARCHAR},
+      employee_wife = #{employeeWife,jdbcType=VARCHAR},
+      employee_wifegzh = #{employeeWifegzh,jdbcType=CHAR},
+      employee_wifename = #{employeeWifename,jdbcType=VARCHAR},
+      employee_wifespell = #{employeeWifespell,jdbcType=VARCHAR},
+      employee_wifeunit = #{employeeWifeunit,jdbcType=VARCHAR},
+      employee_houseff = #{employeeHouseff,jdbcType=VARCHAR},
+      employee_kinddate = #{employeeKinddate,jdbcType=TIMESTAMP},
+      employee_fdzf = #{employeeFdzf,jdbcType=VARCHAR},
+      employee_zfbtstat = #{employeeZfbtstat,jdbcType=CHAR},
+      employee_yhzh = #{employeeYhzh,jdbcType=VARCHAR},
+      employee_khyh = #{employeeKhyh,jdbcType=VARCHAR},
+      employee_ycxbtje = #{employeeYcxbtje,jdbcType=DECIMAL},
+      employee_ycxdate = #{employeeYcxdate,jdbcType=TIMESTAMP},
+      employee_xqcode = #{employeeXqcode,jdbcType=CHAR},
+      employee_zybtje = #{employeeZybtje,jdbcType=DECIMAL},
+      employee_zw = #{employeeZw,jdbcType=VARCHAR},
+      employee_zc = #{employeeZc,jdbcType=VARCHAR},
+      employee_yhmemo = #{employeeYhmemo,jdbcType=VARCHAR},
+      employee_sxdate = #{employeeSxdate,jdbcType=TIMESTAMP},
+      employee_dszn = #{employeeDszn,jdbcType=CHAR},
+      employee_zgxl = #{employeeZgxl,jdbcType=VARCHAR},
+      employee_jdglold = #{employeeJdglold,jdbcType=DECIMAL},
+      employee_jdglnew = #{employeeJdglnew,jdbcType=DECIMAL},
+      employee_zyxhbt = #{employeeZyxhbt,jdbcType=DECIMAL},
+      employee_tfje = #{employeeTfje,jdbcType=DECIMAL},
+      employee_statedate = #{employeeStatedate,jdbcType=TIMESTAMP},
+      employee_zfmj = #{employeeZfmj,jdbcType=DECIMAL},
+      employee_uarea = #{employeeUarea,jdbcType=DECIMAL},
+      employee_yhzh2 = #{employeeYhzh2,jdbcType=VARCHAR},
+      employee_khyh2 = #{employeeKhyh2,jdbcType=VARCHAR},
+      employee_yhmemo2 = #{employeeYhmemo2,jdbcType=VARCHAR},
+      employee_zcdate = #{employeeZcdate,jdbcType=TIMESTAMP},
+      employee_pofwmj = #{employeePofwmj,jdbcType=DECIMAL},
+      employee_jdgl = #{employeeJdgl,jdbcType=DECIMAL},
+      employee_rylb = #{employeeRylb,jdbcType=VARCHAR},
+      employee_telphol = #{employeeTelphol,jdbcType=VARCHAR},
+      employee_photo = #{employeePhoto,jdbcType=LONGVARCHAR}
+    where employee_serial = #{employeeSerial,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.unknow.entity.Employee" >
+    update employee
+    set filiation_serial = #{filiationSerial,jdbcType=VARCHAR},
+      department_serial = #{departmentSerial,jdbcType=VARCHAR},
+      employee_name = #{employeeName,jdbcType=VARCHAR},
+      employee_spell = #{employeeSpell,jdbcType=VARCHAR},
+      credentials_serial = #{credentialsSerial,jdbcType=VARCHAR},
+      employee_jdserial = #{employeeJdserial,jdbcType=VARCHAR},
+      employee_id = #{employeeId,jdbcType=VARCHAR},
+      employee_birth = #{employeeBirth,jdbcType=TIMESTAMP},
+      employee_sex = #{employeeSex,jdbcType=BIT},
+      nation_code = #{nationCode,jdbcType=VARCHAR},
+      polity_code = #{polityCode,jdbcType=VARCHAR},
+      deformity_code = #{deformityCode,jdbcType=VARCHAR},
+      employee_degress = #{employeeDegress,jdbcType=VARCHAR},
+      employee_state = #{employeeState,jdbcType=VARCHAR},
+      employee_marriage = #{employeeMarriage,jdbcType=VARCHAR},
+      employee_code = #{employeeCode,jdbcType=BIT},
+      employee_academy = #{employeeAcademy,jdbcType=VARCHAR},
+      employee_graduate = #{employeeGraduate,jdbcType=TIMESTAMP},
+      employee_enter = #{employeeEnter,jdbcType=TIMESTAMP},
+      employee_work = #{employeeWork,jdbcType=TIMESTAMP},
+      employee_memo = #{employeeMemo,jdbcType=VARCHAR},
+      employee_zhicheng = #{employeeZhicheng,jdbcType=VARCHAR},
+      employee_zhiwu = #{employeeZhiwu,jdbcType=VARCHAR},
+      employee_tuixiu = #{employeeTuixiu,jdbcType=TIMESTAMP},
+      employee_age = #{employeeAge,jdbcType=INTEGER},
+      employee_phone = #{employeePhone,jdbcType=VARCHAR},
+      employee_mobiletel = #{employeeMobiletel,jdbcType=VARCHAR},
+      employee_caiwuhao = #{employeeCaiwuhao,jdbcType=VARCHAR},
+      employee_double = #{employeeDouble,jdbcType=VARCHAR},
+      employee_zfzgxs = #{employeeZfzgxs,jdbcType=NUMERIC},
+      emp_fb_gzbz = #{empFbGzbz,jdbcType=DECIMAL},
+      emp_fb_zfbtmjbz = #{empFbZfbtmjbz,jdbcType=DECIMAL},
+      emp_fb_symj = #{empFbSymj,jdbcType=DECIMAL},
+      emp_fb_qcmj = #{empFbQcmj,jdbcType=DECIMAL},
+      emp_fb_sfqk = #{empFbSfqk,jdbcType=DECIMAL},
+      emp_fb_gjjqgl = #{empFbGjjqgl,jdbcType=DECIMAL},
+      emp_fb_gjjqgljs = #{empFbGjjqgljs,jdbcType=DECIMAL},
+      emp_fb_aybt = #{empFbAybt,jdbcType=DECIMAL},
+      emp_fb_ybhj = #{empFbYbhj,jdbcType=DECIMAL},
+      emp_fb_wfycxbt = #{empFbWfycxbt,jdbcType=DECIMAL},
+      emp_fb_wdbycxbt = #{empFbWdbycxbt,jdbcType=DECIMAL},
+      emp_fb_hj = #{empFbHj,jdbcType=DECIMAL},
+      emp_fb_fh = #{empFbFh,jdbcType=VARCHAR},
+      emp_fb_jzmj = #{empFbJzmj,jdbcType=DECIMAL},
+      emp_pwd = #{empPwd,jdbcType=VARCHAR},
+      pwd_flag = #{pwdFlag,jdbcType=CHAR},
+      zjbt = #{zjbt,jdbcType=NUMERIC},
+      employee_wfyy = #{employeeWfyy,jdbcType=VARCHAR},
+      employee_ffjf = #{employeeFfjf,jdbcType=DECIMAL},
+      pmc = #{pmc,jdbcType=INTEGER},
+      hmc = #{hmc,jdbcType=INTEGER},
+      employee_sssj = #{employeeSssj,jdbcType=TIMESTAMP},
+      lysj = #{lysj,jdbcType=TIMESTAMP},
+      zhsj = #{zhsj,jdbcType=TIMESTAMP},
+      rsbz_serial = #{rsbzSerial,jdbcType=VARCHAR},
+      employee_zhicheng_lev = #{employeeZhichengLev,jdbcType=VARCHAR},
+      employee_zhiwu_lev = #{employeeZhiwuLev,jdbcType=VARCHAR},
+      isselect = #{isselect,jdbcType=CHAR},
+      olddept = #{olddept,jdbcType=VARCHAR},
+      employee_gjj = #{employeeGjj,jdbcType=DECIMAL},
+      employee_gjjsj = #{employeeGjjsj,jdbcType=TIMESTAMP},
+      employee_hksz = #{employeeHksz,jdbcType=VARCHAR},
+      employee_email = #{employeeEmail,jdbcType=VARCHAR},
+      employee_dwcode = #{employeeDwcode,jdbcType=VARCHAR},
+      employee_wife = #{employeeWife,jdbcType=VARCHAR},
+      employee_wifegzh = #{employeeWifegzh,jdbcType=CHAR},
+      employee_wifename = #{employeeWifename,jdbcType=VARCHAR},
+      employee_wifespell = #{employeeWifespell,jdbcType=VARCHAR},
+      employee_wifeunit = #{employeeWifeunit,jdbcType=VARCHAR},
+      employee_houseff = #{employeeHouseff,jdbcType=VARCHAR},
+      employee_kinddate = #{employeeKinddate,jdbcType=TIMESTAMP},
+      employee_fdzf = #{employeeFdzf,jdbcType=VARCHAR},
+      employee_zfbtstat = #{employeeZfbtstat,jdbcType=CHAR},
+      employee_yhzh = #{employeeYhzh,jdbcType=VARCHAR},
+      employee_khyh = #{employeeKhyh,jdbcType=VARCHAR},
+      employee_ycxbtje = #{employeeYcxbtje,jdbcType=DECIMAL},
+      employee_ycxdate = #{employeeYcxdate,jdbcType=TIMESTAMP},
+      employee_xqcode = #{employeeXqcode,jdbcType=CHAR},
+      employee_zybtje = #{employeeZybtje,jdbcType=DECIMAL},
+      employee_zw = #{employeeZw,jdbcType=VARCHAR},
+      employee_zc = #{employeeZc,jdbcType=VARCHAR},
+      employee_yhmemo = #{employeeYhmemo,jdbcType=VARCHAR},
+      employee_sxdate = #{employeeSxdate,jdbcType=TIMESTAMP},
+      employee_dszn = #{employeeDszn,jdbcType=CHAR},
+      employee_zgxl = #{employeeZgxl,jdbcType=VARCHAR},
+      employee_jdglold = #{employeeJdglold,jdbcType=DECIMAL},
+      employee_jdglnew = #{employeeJdglnew,jdbcType=DECIMAL},
+      employee_zyxhbt = #{employeeZyxhbt,jdbcType=DECIMAL},
+      employee_tfje = #{employeeTfje,jdbcType=DECIMAL},
+      employee_statedate = #{employeeStatedate,jdbcType=TIMESTAMP},
+      employee_zfmj = #{employeeZfmj,jdbcType=DECIMAL},
+      employee_uarea = #{employeeUarea,jdbcType=DECIMAL},
+      employee_yhzh2 = #{employeeYhzh2,jdbcType=VARCHAR},
+      employee_khyh2 = #{employeeKhyh2,jdbcType=VARCHAR},
+      employee_yhmemo2 = #{employeeYhmemo2,jdbcType=VARCHAR},
+      employee_zcdate = #{employeeZcdate,jdbcType=TIMESTAMP},
+      employee_pofwmj = #{employeePofwmj,jdbcType=DECIMAL},
+      employee_jdgl = #{employeeJdgl,jdbcType=DECIMAL},
+      employee_rylb = #{employeeRylb,jdbcType=VARCHAR},
+      employee_telphol = #{employeeTelphol,jdbcType=VARCHAR}
+    where employee_serial = #{employeeSerial,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unknow.mapper.DepartmentMapper" >
+  <resultMap id="BaseResultMap" type="com.unknow.entity.Department" >
+    <result column="department_serial" property="departmentSerial" jdbcType="VARCHAR" />
+    <result column="department_name" property="departmentName" jdbcType="VARCHAR" />
+    <result column="department_allname" property="departmentAllname" jdbcType="VARCHAR" />
+    <result column="department_person" property="departmentPerson" jdbcType="VARCHAR" />
+    <result column="department_tel" property="departmentTel" jdbcType="VARCHAR" />
+    <result column="department_id" property="departmentId" jdbcType="VARCHAR" />
+    <result column="department_memo" property="departmentMemo" jdbcType="VARCHAR" />
+    <result column="danwei_count" property="danweiCount" jdbcType="INTEGER" />
+    <result column="bumen_count" property="bumenCount" jdbcType="INTEGER" />
+    <result column="jigou_count" property="jigouCount" jdbcType="INTEGER" />
+    <result column="department_spell" property="departmentSpell" jdbcType="VARCHAR" />
+    <result column="department_code" property="departmentCode" jdbcType="VARCHAR" />
+    <result column="department_zhcode" property="departmentZhcode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    department_serial, department_name, department_allname, department_person, department_tel, 
+    department_id, department_memo, danwei_count, bumen_count, jigou_count, department_spell, 
+    department_code, department_zhcode
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.unknow.entity.DepartmentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from department
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.unknow.entity.DepartmentExample" >
+    delete from department
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.unknow.entity.Department" >
+    insert into department (department_serial, department_name, 
+      department_allname, department_person, department_tel, 
+      department_id, department_memo, danwei_count, 
+      bumen_count, jigou_count, department_spell, 
+      department_code, department_zhcode)
+    values (#{departmentSerial,jdbcType=VARCHAR}, #{departmentName,jdbcType=VARCHAR}, 
+      #{departmentAllname,jdbcType=VARCHAR}, #{departmentPerson,jdbcType=VARCHAR}, #{departmentTel,jdbcType=VARCHAR}, 
+      #{departmentId,jdbcType=VARCHAR}, #{departmentMemo,jdbcType=VARCHAR}, #{danweiCount,jdbcType=INTEGER}, 
+      #{bumenCount,jdbcType=INTEGER}, #{jigouCount,jdbcType=INTEGER}, #{departmentSpell,jdbcType=VARCHAR}, 
+      #{departmentCode,jdbcType=VARCHAR}, #{departmentZhcode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.unknow.entity.Department" >
+    insert into department
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="departmentSerial != null" >
+        department_serial,
+      </if>
+      <if test="departmentName != null" >
+        department_name,
+      </if>
+      <if test="departmentAllname != null" >
+        department_allname,
+      </if>
+      <if test="departmentPerson != null" >
+        department_person,
+      </if>
+      <if test="departmentTel != null" >
+        department_tel,
+      </if>
+      <if test="departmentId != null" >
+        department_id,
+      </if>
+      <if test="departmentMemo != null" >
+        department_memo,
+      </if>
+      <if test="danweiCount != null" >
+        danwei_count,
+      </if>
+      <if test="bumenCount != null" >
+        bumen_count,
+      </if>
+      <if test="jigouCount != null" >
+        jigou_count,
+      </if>
+      <if test="departmentSpell != null" >
+        department_spell,
+      </if>
+      <if test="departmentCode != null" >
+        department_code,
+      </if>
+      <if test="departmentZhcode != null" >
+        department_zhcode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="departmentSerial != null" >
+        #{departmentSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentName != null" >
+        #{departmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentAllname != null" >
+        #{departmentAllname,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentPerson != null" >
+        #{departmentPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentTel != null" >
+        #{departmentTel,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+        #{departmentId,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentMemo != null" >
+        #{departmentMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="danweiCount != null" >
+        #{danweiCount,jdbcType=INTEGER},
+      </if>
+      <if test="bumenCount != null" >
+        #{bumenCount,jdbcType=INTEGER},
+      </if>
+      <if test="jigouCount != null" >
+        #{jigouCount,jdbcType=INTEGER},
+      </if>
+      <if test="departmentSpell != null" >
+        #{departmentSpell,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentCode != null" >
+        #{departmentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentZhcode != null" >
+        #{departmentZhcode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.unknow.entity.DepartmentExample" resultType="java.lang.Integer" >
+    select count(*) from department
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update department
+    <set >
+      <if test="record.departmentSerial != null" >
+        department_serial = #{record.departmentSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentName != null" >
+        department_name = #{record.departmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentAllname != null" >
+        department_allname = #{record.departmentAllname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentPerson != null" >
+        department_person = #{record.departmentPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentTel != null" >
+        department_tel = #{record.departmentTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentId != null" >
+        department_id = #{record.departmentId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentMemo != null" >
+        department_memo = #{record.departmentMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.danweiCount != null" >
+        danwei_count = #{record.danweiCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.bumenCount != null" >
+        bumen_count = #{record.bumenCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.jigouCount != null" >
+        jigou_count = #{record.jigouCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.departmentSpell != null" >
+        department_spell = #{record.departmentSpell,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentCode != null" >
+        department_code = #{record.departmentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentZhcode != null" >
+        department_zhcode = #{record.departmentZhcode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update department
+    set department_serial = #{record.departmentSerial,jdbcType=VARCHAR},
+      department_name = #{record.departmentName,jdbcType=VARCHAR},
+      department_allname = #{record.departmentAllname,jdbcType=VARCHAR},
+      department_person = #{record.departmentPerson,jdbcType=VARCHAR},
+      department_tel = #{record.departmentTel,jdbcType=VARCHAR},
+      department_id = #{record.departmentId,jdbcType=VARCHAR},
+      department_memo = #{record.departmentMemo,jdbcType=VARCHAR},
+      danwei_count = #{record.danweiCount,jdbcType=INTEGER},
+      bumen_count = #{record.bumenCount,jdbcType=INTEGER},
+      jigou_count = #{record.jigouCount,jdbcType=INTEGER},
+      department_spell = #{record.departmentSpell,jdbcType=VARCHAR},
+      department_code = #{record.departmentCode,jdbcType=VARCHAR},
+      department_zhcode = #{record.departmentZhcode,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

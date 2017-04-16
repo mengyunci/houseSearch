@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unknow.mapper.HouseMapper" >
+  <resultMap id="BaseResultMap" type="com.unknow.entity.House" >
+    <id column="area_serial" property="areaSerial" jdbcType="VARCHAR" />
+    <result column="house_serial" property="houseSerial" jdbcType="VARCHAR" />
+    <result column="building_serial" property="buildingSerial" jdbcType="VARCHAR" />
+    <result column="house_name" property="houseName" jdbcType="VARCHAR" />
+    <result column="house_in" property="houseIn" jdbcType="CHAR" />
+    <result column="house_unit" property="houseUnit" jdbcType="VARCHAR" />
+    <result column="house_barea" property="houseBarea" jdbcType="DECIMAL" />
+    <result column="house_uarea" property="houseUarea" jdbcType="DECIMAL" />
+    <result column="house_price" property="housePrice" jdbcType="DECIMAL" />
+    <result column="house_direction" property="houseDirection" jdbcType="VARCHAR" />
+    <result column="house_type" property="houseType" jdbcType="VARCHAR" />
+    <result column="house_state" property="houseState" jdbcType="CHAR" />
+    <result column="house_quality" property="houseQuality" jdbcType="VARCHAR" />
+    <result column="house_memo" property="houseMemo" jdbcType="VARCHAR" />
+    <result column="house_kongzhiyy" property="houseKongzhiyy" jdbcType="VARCHAR" />
+    <result column="house_dengceng" property="houseDengceng" jdbcType="VARCHAR" />
+    <result column="house_diceng" property="houseDiceng" jdbcType="VARCHAR" />
+    <result column="house_xishai" property="houseXishai" jdbcType="VARCHAR" />
+    <result column="house_qtyh" property="houseQtyh" jdbcType="VARCHAR" />
+    <result column="house_jyrc" property="houseJyrc" jdbcType="VARCHAR" />
+    <result column="house_jyr" property="houseJyr" jdbcType="VARCHAR" />
+    <result column="house_jjxs" property="houseJjxs" jdbcType="NUMERIC" />
+    <result column="house_yzxs" property="houseYzxs" jdbcType="NUMERIC" />
+    <result column="house_syjjxs" property="houseSyjjxs" jdbcType="NUMERIC" />
+    <result column="house_zujin" property="houseZujin" jdbcType="DECIMAL" />
+    <result column="house_louctj" property="houseLouctj" jdbcType="NUMERIC" />
+    <result column="house_fangwtj" property="houseFangwtj" jdbcType="NUMERIC" />
+    <result column="yxwx" property="yxwx" jdbcType="VARCHAR" />
+    <result column="fysx" property="fysx" jdbcType="VARCHAR" />
+    <result column="czzj" property="czzj" jdbcType="DECIMAL" />
+    <result column="wyf" property="wyf" jdbcType="DECIMAL" />
+    <result column="fwjglx" property="fwjglx" jdbcType="VARCHAR" />
+    <result column="wyfylx" property="wyfylx" jdbcType="VARCHAR" />
+    <result column="gfyhlx" property="gfyhlx" jdbcType="VARCHAR" />
+    <result column="pictime" property="pictime" jdbcType="TIMESTAMP" />
+    <result column="house_jgrq" property="houseJgrq" jdbcType="TIMESTAMP" />
+    <result column="house_jgdj" property="houseJgdj" jdbcType="CHAR" />
+    <result column="house_ytmj" property="houseYtmj" jdbcType="DECIMAL" />
+    <result column="house_fwlb" property="houseFwlb" jdbcType="CHAR" />
+    <result column="house_dmmj" property="houseDmmj" jdbcType="DECIMAL" />
+    <result column="house_jgqx" property="houseJgqx" jdbcType="DECIMAL" />
+    <result column="house_hjxs" property="houseHjxs" jdbcType="DECIMAL" />
+    <result column="house_gnxs" property="houseGnxs" jdbcType="DECIMAL" />
+    <result column="house_fjf" property="houseFjf" jdbcType="DECIMAL" />
+    <result column="house_fkyt" property="houseFkyt" jdbcType="CHAR" />
+    <result column="house_xyzf" property="houseXyzf" jdbcType="CHAR" />
+    <result column="house_rarea" property="houseRarea" jdbcType="DECIMAL" />
+    <result column="house_kind" property="houseKind" jdbcType="CHAR" />
+    <result column="house_sb" property="houseSb" jdbcType="CHAR" />
+    <result column="house_seserial" property="houseSeserial" jdbcType="VARCHAR" />
+    <result column="house_a" property="houseA" jdbcType="CHAR" />
+    <result column="house_crarea" property="houseCrarea" jdbcType="DECIMAL" />
+    <result column="house_cbarea" property="houseCbarea" jdbcType="DECIMAL" />
+    <result column="house_cuarea" property="houseCuarea" jdbcType="DECIMAL" />
+    <result column="house_dtfy" property="houseDtfy" jdbcType="DECIMAL" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.unknow.entity.House" extends="BaseResultMap" >
+    <result column="pic" property="pic" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    area_serial, house_serial, building_serial, house_name, house_in, house_unit, house_barea, 
+    house_uarea, house_price, house_direction, house_type, house_state, house_quality, 
+    house_memo, house_kongzhiyy, house_dengceng, house_diceng, house_xishai, house_qtyh, 
+    house_jyrc, house_jyr, house_jjxs, house_yzxs, house_syjjxs, house_zujin, house_louctj, 
+    house_fangwtj, yxwx, fysx, czzj, wyf, fwjglx, wyfylx, gfyhlx, pictime, house_jgrq, 
+    house_jgdj, house_ytmj, house_fwlb, house_dmmj, house_jgqx, house_hjxs, house_gnxs, 
+    house_fjf, house_fkyt, house_xyzf, house_rarea, house_kind, house_sb, house_seserial, 
+    house_a, house_crarea, house_cbarea, house_cuarea, house_dtfy
+  </sql>
+  <sql id="Blob_Column_List" >
+    pic
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.unknow.entity.HouseExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from house
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.unknow.entity.HouseExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from house
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from house
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from house
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.unknow.entity.HouseExample" >
+    delete from house
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.unknow.entity.House" >
+    insert into house (area_serial, house_serial, building_serial, 
+      house_name, house_in, house_unit, 
+      house_barea, house_uarea, house_price, 
+      house_direction, house_type, house_state, 
+      house_quality, house_memo, house_kongzhiyy, 
+      house_dengceng, house_diceng, house_xishai, 
+      house_qtyh, house_jyrc, house_jyr, 
+      house_jjxs, house_yzxs, house_syjjxs, 
+      house_zujin, house_louctj, house_fangwtj, 
+      yxwx, fysx, czzj, wyf, 
+      fwjglx, wyfylx, gfyhlx, 
+      pictime, house_jgrq, house_jgdj, 
+      house_ytmj, house_fwlb, house_dmmj, 
+      house_jgqx, house_hjxs, house_gnxs, 
+      house_fjf, house_fkyt, house_xyzf, 
+      house_rarea, house_kind, house_sb, 
+      house_seserial, house_a, house_crarea, 
+      house_cbarea, house_cuarea, house_dtfy, 
+      pic)
+    values (#{areaSerial,jdbcType=VARCHAR}, #{houseSerial,jdbcType=VARCHAR}, #{buildingSerial,jdbcType=VARCHAR}, 
+      #{houseName,jdbcType=VARCHAR}, #{houseIn,jdbcType=CHAR}, #{houseUnit,jdbcType=VARCHAR}, 
+      #{houseBarea,jdbcType=DECIMAL}, #{houseUarea,jdbcType=DECIMAL}, #{housePrice,jdbcType=DECIMAL}, 
+      #{houseDirection,jdbcType=VARCHAR}, #{houseType,jdbcType=VARCHAR}, #{houseState,jdbcType=CHAR}, 
+      #{houseQuality,jdbcType=VARCHAR}, #{houseMemo,jdbcType=VARCHAR}, #{houseKongzhiyy,jdbcType=VARCHAR}, 
+      #{houseDengceng,jdbcType=VARCHAR}, #{houseDiceng,jdbcType=VARCHAR}, #{houseXishai,jdbcType=VARCHAR}, 
+      #{houseQtyh,jdbcType=VARCHAR}, #{houseJyrc,jdbcType=VARCHAR}, #{houseJyr,jdbcType=VARCHAR}, 
+      #{houseJjxs,jdbcType=NUMERIC}, #{houseYzxs,jdbcType=NUMERIC}, #{houseSyjjxs,jdbcType=NUMERIC}, 
+      #{houseZujin,jdbcType=DECIMAL}, #{houseLouctj,jdbcType=NUMERIC}, #{houseFangwtj,jdbcType=NUMERIC}, 
+      #{yxwx,jdbcType=VARCHAR}, #{fysx,jdbcType=VARCHAR}, #{czzj,jdbcType=DECIMAL}, #{wyf,jdbcType=DECIMAL}, 
+      #{fwjglx,jdbcType=VARCHAR}, #{wyfylx,jdbcType=VARCHAR}, #{gfyhlx,jdbcType=VARCHAR}, 
+      #{pictime,jdbcType=TIMESTAMP}, #{houseJgrq,jdbcType=TIMESTAMP}, #{houseJgdj,jdbcType=CHAR}, 
+      #{houseYtmj,jdbcType=DECIMAL}, #{houseFwlb,jdbcType=CHAR}, #{houseDmmj,jdbcType=DECIMAL}, 
+      #{houseJgqx,jdbcType=DECIMAL}, #{houseHjxs,jdbcType=DECIMAL}, #{houseGnxs,jdbcType=DECIMAL}, 
+      #{houseFjf,jdbcType=DECIMAL}, #{houseFkyt,jdbcType=CHAR}, #{houseXyzf,jdbcType=CHAR}, 
+      #{houseRarea,jdbcType=DECIMAL}, #{houseKind,jdbcType=CHAR}, #{houseSb,jdbcType=CHAR}, 
+      #{houseSeserial,jdbcType=VARCHAR}, #{houseA,jdbcType=CHAR}, #{houseCrarea,jdbcType=DECIMAL}, 
+      #{houseCbarea,jdbcType=DECIMAL}, #{houseCuarea,jdbcType=DECIMAL}, #{houseDtfy,jdbcType=DECIMAL}, 
+      #{pic,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.unknow.entity.House" >
+    insert into house
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="areaSerial != null" >
+        area_serial,
+      </if>
+      <if test="houseSerial != null" >
+        house_serial,
+      </if>
+      <if test="buildingSerial != null" >
+        building_serial,
+      </if>
+      <if test="houseName != null" >
+        house_name,
+      </if>
+      <if test="houseIn != null" >
+        house_in,
+      </if>
+      <if test="houseUnit != null" >
+        house_unit,
+      </if>
+      <if test="houseBarea != null" >
+        house_barea,
+      </if>
+      <if test="houseUarea != null" >
+        house_uarea,
+      </if>
+      <if test="housePrice != null" >
+        house_price,
+      </if>
+      <if test="houseDirection != null" >
+        house_direction,
+      </if>
+      <if test="houseType != null" >
+        house_type,
+      </if>
+      <if test="houseState != null" >
+        house_state,
+      </if>
+      <if test="houseQuality != null" >
+        house_quality,
+      </if>
+      <if test="houseMemo != null" >
+        house_memo,
+      </if>
+      <if test="houseKongzhiyy != null" >
+        house_kongzhiyy,
+      </if>
+      <if test="houseDengceng != null" >
+        house_dengceng,
+      </if>
+      <if test="houseDiceng != null" >
+        house_diceng,
+      </if>
+      <if test="houseXishai != null" >
+        house_xishai,
+      </if>
+      <if test="houseQtyh != null" >
+        house_qtyh,
+      </if>
+      <if test="houseJyrc != null" >
+        house_jyrc,
+      </if>
+      <if test="houseJyr != null" >
+        house_jyr,
+      </if>
+      <if test="houseJjxs != null" >
+        house_jjxs,
+      </if>
+      <if test="houseYzxs != null" >
+        house_yzxs,
+      </if>
+      <if test="houseSyjjxs != null" >
+        house_syjjxs,
+      </if>
+      <if test="houseZujin != null" >
+        house_zujin,
+      </if>
+      <if test="houseLouctj != null" >
+        house_louctj,
+      </if>
+      <if test="houseFangwtj != null" >
+        house_fangwtj,
+      </if>
+      <if test="yxwx != null" >
+        yxwx,
+      </if>
+      <if test="fysx != null" >
+        fysx,
+      </if>
+      <if test="czzj != null" >
+        czzj,
+      </if>
+      <if test="wyf != null" >
+        wyf,
+      </if>
+      <if test="fwjglx != null" >
+        fwjglx,
+      </if>
+      <if test="wyfylx != null" >
+        wyfylx,
+      </if>
+      <if test="gfyhlx != null" >
+        gfyhlx,
+      </if>
+      <if test="pictime != null" >
+        pictime,
+      </if>
+      <if test="houseJgrq != null" >
+        house_jgrq,
+      </if>
+      <if test="houseJgdj != null" >
+        house_jgdj,
+      </if>
+      <if test="houseYtmj != null" >
+        house_ytmj,
+      </if>
+      <if test="houseFwlb != null" >
+        house_fwlb,
+      </if>
+      <if test="houseDmmj != null" >
+        house_dmmj,
+      </if>
+      <if test="houseJgqx != null" >
+        house_jgqx,
+      </if>
+      <if test="houseHjxs != null" >
+        house_hjxs,
+      </if>
+      <if test="houseGnxs != null" >
+        house_gnxs,
+      </if>
+      <if test="houseFjf != null" >
+        house_fjf,
+      </if>
+      <if test="houseFkyt != null" >
+        house_fkyt,
+      </if>
+      <if test="houseXyzf != null" >
+        house_xyzf,
+      </if>
+      <if test="houseRarea != null" >
+        house_rarea,
+      </if>
+      <if test="houseKind != null" >
+        house_kind,
+      </if>
+      <if test="houseSb != null" >
+        house_sb,
+      </if>
+      <if test="houseSeserial != null" >
+        house_seserial,
+      </if>
+      <if test="houseA != null" >
+        house_a,
+      </if>
+      <if test="houseCrarea != null" >
+        house_crarea,
+      </if>
+      <if test="houseCbarea != null" >
+        house_cbarea,
+      </if>
+      <if test="houseCuarea != null" >
+        house_cuarea,
+      </if>
+      <if test="houseDtfy != null" >
+        house_dtfy,
+      </if>
+      <if test="pic != null" >
+        pic,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="areaSerial != null" >
+        #{areaSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="houseSerial != null" >
+        #{houseSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingSerial != null" >
+        #{buildingSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="houseName != null" >
+        #{houseName,jdbcType=VARCHAR},
+      </if>
+      <if test="houseIn != null" >
+        #{houseIn,jdbcType=CHAR},
+      </if>
+      <if test="houseUnit != null" >
+        #{houseUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="houseBarea != null" >
+        #{houseBarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseUarea != null" >
+        #{houseUarea,jdbcType=DECIMAL},
+      </if>
+      <if test="housePrice != null" >
+        #{housePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="houseDirection != null" >
+        #{houseDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="houseType != null" >
+        #{houseType,jdbcType=VARCHAR},
+      </if>
+      <if test="houseState != null" >
+        #{houseState,jdbcType=CHAR},
+      </if>
+      <if test="houseQuality != null" >
+        #{houseQuality,jdbcType=VARCHAR},
+      </if>
+      <if test="houseMemo != null" >
+        #{houseMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="houseKongzhiyy != null" >
+        #{houseKongzhiyy,jdbcType=VARCHAR},
+      </if>
+      <if test="houseDengceng != null" >
+        #{houseDengceng,jdbcType=VARCHAR},
+      </if>
+      <if test="houseDiceng != null" >
+        #{houseDiceng,jdbcType=VARCHAR},
+      </if>
+      <if test="houseXishai != null" >
+        #{houseXishai,jdbcType=VARCHAR},
+      </if>
+      <if test="houseQtyh != null" >
+        #{houseQtyh,jdbcType=VARCHAR},
+      </if>
+      <if test="houseJyrc != null" >
+        #{houseJyrc,jdbcType=VARCHAR},
+      </if>
+      <if test="houseJyr != null" >
+        #{houseJyr,jdbcType=VARCHAR},
+      </if>
+      <if test="houseJjxs != null" >
+        #{houseJjxs,jdbcType=NUMERIC},
+      </if>
+      <if test="houseYzxs != null" >
+        #{houseYzxs,jdbcType=NUMERIC},
+      </if>
+      <if test="houseSyjjxs != null" >
+        #{houseSyjjxs,jdbcType=NUMERIC},
+      </if>
+      <if test="houseZujin != null" >
+        #{houseZujin,jdbcType=DECIMAL},
+      </if>
+      <if test="houseLouctj != null" >
+        #{houseLouctj,jdbcType=NUMERIC},
+      </if>
+      <if test="houseFangwtj != null" >
+        #{houseFangwtj,jdbcType=NUMERIC},
+      </if>
+      <if test="yxwx != null" >
+        #{yxwx,jdbcType=VARCHAR},
+      </if>
+      <if test="fysx != null" >
+        #{fysx,jdbcType=VARCHAR},
+      </if>
+      <if test="czzj != null" >
+        #{czzj,jdbcType=DECIMAL},
+      </if>
+      <if test="wyf != null" >
+        #{wyf,jdbcType=DECIMAL},
+      </if>
+      <if test="fwjglx != null" >
+        #{fwjglx,jdbcType=VARCHAR},
+      </if>
+      <if test="wyfylx != null" >
+        #{wyfylx,jdbcType=VARCHAR},
+      </if>
+      <if test="gfyhlx != null" >
+        #{gfyhlx,jdbcType=VARCHAR},
+      </if>
+      <if test="pictime != null" >
+        #{pictime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="houseJgrq != null" >
+        #{houseJgrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="houseJgdj != null" >
+        #{houseJgdj,jdbcType=CHAR},
+      </if>
+      <if test="houseYtmj != null" >
+        #{houseYtmj,jdbcType=DECIMAL},
+      </if>
+      <if test="houseFwlb != null" >
+        #{houseFwlb,jdbcType=CHAR},
+      </if>
+      <if test="houseDmmj != null" >
+        #{houseDmmj,jdbcType=DECIMAL},
+      </if>
+      <if test="houseJgqx != null" >
+        #{houseJgqx,jdbcType=DECIMAL},
+      </if>
+      <if test="houseHjxs != null" >
+        #{houseHjxs,jdbcType=DECIMAL},
+      </if>
+      <if test="houseGnxs != null" >
+        #{houseGnxs,jdbcType=DECIMAL},
+      </if>
+      <if test="houseFjf != null" >
+        #{houseFjf,jdbcType=DECIMAL},
+      </if>
+      <if test="houseFkyt != null" >
+        #{houseFkyt,jdbcType=CHAR},
+      </if>
+      <if test="houseXyzf != null" >
+        #{houseXyzf,jdbcType=CHAR},
+      </if>
+      <if test="houseRarea != null" >
+        #{houseRarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseKind != null" >
+        #{houseKind,jdbcType=CHAR},
+      </if>
+      <if test="houseSb != null" >
+        #{houseSb,jdbcType=CHAR},
+      </if>
+      <if test="houseSeserial != null" >
+        #{houseSeserial,jdbcType=VARCHAR},
+      </if>
+      <if test="houseA != null" >
+        #{houseA,jdbcType=CHAR},
+      </if>
+      <if test="houseCrarea != null" >
+        #{houseCrarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseCbarea != null" >
+        #{houseCbarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseCuarea != null" >
+        #{houseCuarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseDtfy != null" >
+        #{houseDtfy,jdbcType=DECIMAL},
+      </if>
+      <if test="pic != null" >
+        #{pic,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.unknow.entity.HouseExample" resultType="java.lang.Integer" >
+    select count(*) from house
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update house
+    <set >
+      <if test="record.areaSerial != null" >
+        area_serial = #{record.areaSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseSerial != null" >
+        house_serial = #{record.houseSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildingSerial != null" >
+        building_serial = #{record.buildingSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseName != null" >
+        house_name = #{record.houseName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseIn != null" >
+        house_in = #{record.houseIn,jdbcType=CHAR},
+      </if>
+      <if test="record.houseUnit != null" >
+        house_unit = #{record.houseUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseBarea != null" >
+        house_barea = #{record.houseBarea,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseUarea != null" >
+        house_uarea = #{record.houseUarea,jdbcType=DECIMAL},
+      </if>
+      <if test="record.housePrice != null" >
+        house_price = #{record.housePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseDirection != null" >
+        house_direction = #{record.houseDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseType != null" >
+        house_type = #{record.houseType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseState != null" >
+        house_state = #{record.houseState,jdbcType=CHAR},
+      </if>
+      <if test="record.houseQuality != null" >
+        house_quality = #{record.houseQuality,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseMemo != null" >
+        house_memo = #{record.houseMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseKongzhiyy != null" >
+        house_kongzhiyy = #{record.houseKongzhiyy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseDengceng != null" >
+        house_dengceng = #{record.houseDengceng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseDiceng != null" >
+        house_diceng = #{record.houseDiceng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseXishai != null" >
+        house_xishai = #{record.houseXishai,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseQtyh != null" >
+        house_qtyh = #{record.houseQtyh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseJyrc != null" >
+        house_jyrc = #{record.houseJyrc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseJyr != null" >
+        house_jyr = #{record.houseJyr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseJjxs != null" >
+        house_jjxs = #{record.houseJjxs,jdbcType=NUMERIC},
+      </if>
+      <if test="record.houseYzxs != null" >
+        house_yzxs = #{record.houseYzxs,jdbcType=NUMERIC},
+      </if>
+      <if test="record.houseSyjjxs != null" >
+        house_syjjxs = #{record.houseSyjjxs,jdbcType=NUMERIC},
+      </if>
+      <if test="record.houseZujin != null" >
+        house_zujin = #{record.houseZujin,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseLouctj != null" >
+        house_louctj = #{record.houseLouctj,jdbcType=NUMERIC},
+      </if>
+      <if test="record.houseFangwtj != null" >
+        house_fangwtj = #{record.houseFangwtj,jdbcType=NUMERIC},
+      </if>
+      <if test="record.yxwx != null" >
+        yxwx = #{record.yxwx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fysx != null" >
+        fysx = #{record.fysx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.czzj != null" >
+        czzj = #{record.czzj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wyf != null" >
+        wyf = #{record.wyf,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fwjglx != null" >
+        fwjglx = #{record.fwjglx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wyfylx != null" >
+        wyfylx = #{record.wyfylx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gfyhlx != null" >
+        gfyhlx = #{record.gfyhlx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pictime != null" >
+        pictime = #{record.pictime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.houseJgrq != null" >
+        house_jgrq = #{record.houseJgrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.houseJgdj != null" >
+        house_jgdj = #{record.houseJgdj,jdbcType=CHAR},
+      </if>
+      <if test="record.houseYtmj != null" >
+        house_ytmj = #{record.houseYtmj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseFwlb != null" >
+        house_fwlb = #{record.houseFwlb,jdbcType=CHAR},
+      </if>
+      <if test="record.houseDmmj != null" >
+        house_dmmj = #{record.houseDmmj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseJgqx != null" >
+        house_jgqx = #{record.houseJgqx,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseHjxs != null" >
+        house_hjxs = #{record.houseHjxs,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseGnxs != null" >
+        house_gnxs = #{record.houseGnxs,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseFjf != null" >
+        house_fjf = #{record.houseFjf,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseFkyt != null" >
+        house_fkyt = #{record.houseFkyt,jdbcType=CHAR},
+      </if>
+      <if test="record.houseXyzf != null" >
+        house_xyzf = #{record.houseXyzf,jdbcType=CHAR},
+      </if>
+      <if test="record.houseRarea != null" >
+        house_rarea = #{record.houseRarea,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseKind != null" >
+        house_kind = #{record.houseKind,jdbcType=CHAR},
+      </if>
+      <if test="record.houseSb != null" >
+        house_sb = #{record.houseSb,jdbcType=CHAR},
+      </if>
+      <if test="record.houseSeserial != null" >
+        house_seserial = #{record.houseSeserial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseA != null" >
+        house_a = #{record.houseA,jdbcType=CHAR},
+      </if>
+      <if test="record.houseCrarea != null" >
+        house_crarea = #{record.houseCrarea,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseCbarea != null" >
+        house_cbarea = #{record.houseCbarea,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseCuarea != null" >
+        house_cuarea = #{record.houseCuarea,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseDtfy != null" >
+        house_dtfy = #{record.houseDtfy,jdbcType=DECIMAL},
+      </if>
+      <if test="record.pic != null" >
+        pic = #{record.pic,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update house
+    set area_serial = #{record.areaSerial,jdbcType=VARCHAR},
+      house_serial = #{record.houseSerial,jdbcType=VARCHAR},
+      building_serial = #{record.buildingSerial,jdbcType=VARCHAR},
+      house_name = #{record.houseName,jdbcType=VARCHAR},
+      house_in = #{record.houseIn,jdbcType=CHAR},
+      house_unit = #{record.houseUnit,jdbcType=VARCHAR},
+      house_barea = #{record.houseBarea,jdbcType=DECIMAL},
+      house_uarea = #{record.houseUarea,jdbcType=DECIMAL},
+      house_price = #{record.housePrice,jdbcType=DECIMAL},
+      house_direction = #{record.houseDirection,jdbcType=VARCHAR},
+      house_type = #{record.houseType,jdbcType=VARCHAR},
+      house_state = #{record.houseState,jdbcType=CHAR},
+      house_quality = #{record.houseQuality,jdbcType=VARCHAR},
+      house_memo = #{record.houseMemo,jdbcType=VARCHAR},
+      house_kongzhiyy = #{record.houseKongzhiyy,jdbcType=VARCHAR},
+      house_dengceng = #{record.houseDengceng,jdbcType=VARCHAR},
+      house_diceng = #{record.houseDiceng,jdbcType=VARCHAR},
+      house_xishai = #{record.houseXishai,jdbcType=VARCHAR},
+      house_qtyh = #{record.houseQtyh,jdbcType=VARCHAR},
+      house_jyrc = #{record.houseJyrc,jdbcType=VARCHAR},
+      house_jyr = #{record.houseJyr,jdbcType=VARCHAR},
+      house_jjxs = #{record.houseJjxs,jdbcType=NUMERIC},
+      house_yzxs = #{record.houseYzxs,jdbcType=NUMERIC},
+      house_syjjxs = #{record.houseSyjjxs,jdbcType=NUMERIC},
+      house_zujin = #{record.houseZujin,jdbcType=DECIMAL},
+      house_louctj = #{record.houseLouctj,jdbcType=NUMERIC},
+      house_fangwtj = #{record.houseFangwtj,jdbcType=NUMERIC},
+      yxwx = #{record.yxwx,jdbcType=VARCHAR},
+      fysx = #{record.fysx,jdbcType=VARCHAR},
+      czzj = #{record.czzj,jdbcType=DECIMAL},
+      wyf = #{record.wyf,jdbcType=DECIMAL},
+      fwjglx = #{record.fwjglx,jdbcType=VARCHAR},
+      wyfylx = #{record.wyfylx,jdbcType=VARCHAR},
+      gfyhlx = #{record.gfyhlx,jdbcType=VARCHAR},
+      pictime = #{record.pictime,jdbcType=TIMESTAMP},
+      house_jgrq = #{record.houseJgrq,jdbcType=TIMESTAMP},
+      house_jgdj = #{record.houseJgdj,jdbcType=CHAR},
+      house_ytmj = #{record.houseYtmj,jdbcType=DECIMAL},
+      house_fwlb = #{record.houseFwlb,jdbcType=CHAR},
+      house_dmmj = #{record.houseDmmj,jdbcType=DECIMAL},
+      house_jgqx = #{record.houseJgqx,jdbcType=DECIMAL},
+      house_hjxs = #{record.houseHjxs,jdbcType=DECIMAL},
+      house_gnxs = #{record.houseGnxs,jdbcType=DECIMAL},
+      house_fjf = #{record.houseFjf,jdbcType=DECIMAL},
+      house_fkyt = #{record.houseFkyt,jdbcType=CHAR},
+      house_xyzf = #{record.houseXyzf,jdbcType=CHAR},
+      house_rarea = #{record.houseRarea,jdbcType=DECIMAL},
+      house_kind = #{record.houseKind,jdbcType=CHAR},
+      house_sb = #{record.houseSb,jdbcType=CHAR},
+      house_seserial = #{record.houseSeserial,jdbcType=VARCHAR},
+      house_a = #{record.houseA,jdbcType=CHAR},
+      house_crarea = #{record.houseCrarea,jdbcType=DECIMAL},
+      house_cbarea = #{record.houseCbarea,jdbcType=DECIMAL},
+      house_cuarea = #{record.houseCuarea,jdbcType=DECIMAL},
+      house_dtfy = #{record.houseDtfy,jdbcType=DECIMAL},
+      pic = #{record.pic,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update house
+    set area_serial = #{record.areaSerial,jdbcType=VARCHAR},
+      house_serial = #{record.houseSerial,jdbcType=VARCHAR},
+      building_serial = #{record.buildingSerial,jdbcType=VARCHAR},
+      house_name = #{record.houseName,jdbcType=VARCHAR},
+      house_in = #{record.houseIn,jdbcType=CHAR},
+      house_unit = #{record.houseUnit,jdbcType=VARCHAR},
+      house_barea = #{record.houseBarea,jdbcType=DECIMAL},
+      house_uarea = #{record.houseUarea,jdbcType=DECIMAL},
+      house_price = #{record.housePrice,jdbcType=DECIMAL},
+      house_direction = #{record.houseDirection,jdbcType=VARCHAR},
+      house_type = #{record.houseType,jdbcType=VARCHAR},
+      house_state = #{record.houseState,jdbcType=CHAR},
+      house_quality = #{record.houseQuality,jdbcType=VARCHAR},
+      house_memo = #{record.houseMemo,jdbcType=VARCHAR},
+      house_kongzhiyy = #{record.houseKongzhiyy,jdbcType=VARCHAR},
+      house_dengceng = #{record.houseDengceng,jdbcType=VARCHAR},
+      house_diceng = #{record.houseDiceng,jdbcType=VARCHAR},
+      house_xishai = #{record.houseXishai,jdbcType=VARCHAR},
+      house_qtyh = #{record.houseQtyh,jdbcType=VARCHAR},
+      house_jyrc = #{record.houseJyrc,jdbcType=VARCHAR},
+      house_jyr = #{record.houseJyr,jdbcType=VARCHAR},
+      house_jjxs = #{record.houseJjxs,jdbcType=NUMERIC},
+      house_yzxs = #{record.houseYzxs,jdbcType=NUMERIC},
+      house_syjjxs = #{record.houseSyjjxs,jdbcType=NUMERIC},
+      house_zujin = #{record.houseZujin,jdbcType=DECIMAL},
+      house_louctj = #{record.houseLouctj,jdbcType=NUMERIC},
+      house_fangwtj = #{record.houseFangwtj,jdbcType=NUMERIC},
+      yxwx = #{record.yxwx,jdbcType=VARCHAR},
+      fysx = #{record.fysx,jdbcType=VARCHAR},
+      czzj = #{record.czzj,jdbcType=DECIMAL},
+      wyf = #{record.wyf,jdbcType=DECIMAL},
+      fwjglx = #{record.fwjglx,jdbcType=VARCHAR},
+      wyfylx = #{record.wyfylx,jdbcType=VARCHAR},
+      gfyhlx = #{record.gfyhlx,jdbcType=VARCHAR},
+      pictime = #{record.pictime,jdbcType=TIMESTAMP},
+      house_jgrq = #{record.houseJgrq,jdbcType=TIMESTAMP},
+      house_jgdj = #{record.houseJgdj,jdbcType=CHAR},
+      house_ytmj = #{record.houseYtmj,jdbcType=DECIMAL},
+      house_fwlb = #{record.houseFwlb,jdbcType=CHAR},
+      house_dmmj = #{record.houseDmmj,jdbcType=DECIMAL},
+      house_jgqx = #{record.houseJgqx,jdbcType=DECIMAL},
+      house_hjxs = #{record.houseHjxs,jdbcType=DECIMAL},
+      house_gnxs = #{record.houseGnxs,jdbcType=DECIMAL},
+      house_fjf = #{record.houseFjf,jdbcType=DECIMAL},
+      house_fkyt = #{record.houseFkyt,jdbcType=CHAR},
+      house_xyzf = #{record.houseXyzf,jdbcType=CHAR},
+      house_rarea = #{record.houseRarea,jdbcType=DECIMAL},
+      house_kind = #{record.houseKind,jdbcType=CHAR},
+      house_sb = #{record.houseSb,jdbcType=CHAR},
+      house_seserial = #{record.houseSeserial,jdbcType=VARCHAR},
+      house_a = #{record.houseA,jdbcType=CHAR},
+      house_crarea = #{record.houseCrarea,jdbcType=DECIMAL},
+      house_cbarea = #{record.houseCbarea,jdbcType=DECIMAL},
+      house_cuarea = #{record.houseCuarea,jdbcType=DECIMAL},
+      house_dtfy = #{record.houseDtfy,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.unknow.entity.House" >
+    update house
+    <set >
+      <if test="houseSerial != null" >
+        house_serial = #{houseSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingSerial != null" >
+        building_serial = #{buildingSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="houseName != null" >
+        house_name = #{houseName,jdbcType=VARCHAR},
+      </if>
+      <if test="houseIn != null" >
+        house_in = #{houseIn,jdbcType=CHAR},
+      </if>
+      <if test="houseUnit != null" >
+        house_unit = #{houseUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="houseBarea != null" >
+        house_barea = #{houseBarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseUarea != null" >
+        house_uarea = #{houseUarea,jdbcType=DECIMAL},
+      </if>
+      <if test="housePrice != null" >
+        house_price = #{housePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="houseDirection != null" >
+        house_direction = #{houseDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="houseType != null" >
+        house_type = #{houseType,jdbcType=VARCHAR},
+      </if>
+      <if test="houseState != null" >
+        house_state = #{houseState,jdbcType=CHAR},
+      </if>
+      <if test="houseQuality != null" >
+        house_quality = #{houseQuality,jdbcType=VARCHAR},
+      </if>
+      <if test="houseMemo != null" >
+        house_memo = #{houseMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="houseKongzhiyy != null" >
+        house_kongzhiyy = #{houseKongzhiyy,jdbcType=VARCHAR},
+      </if>
+      <if test="houseDengceng != null" >
+        house_dengceng = #{houseDengceng,jdbcType=VARCHAR},
+      </if>
+      <if test="houseDiceng != null" >
+        house_diceng = #{houseDiceng,jdbcType=VARCHAR},
+      </if>
+      <if test="houseXishai != null" >
+        house_xishai = #{houseXishai,jdbcType=VARCHAR},
+      </if>
+      <if test="houseQtyh != null" >
+        house_qtyh = #{houseQtyh,jdbcType=VARCHAR},
+      </if>
+      <if test="houseJyrc != null" >
+        house_jyrc = #{houseJyrc,jdbcType=VARCHAR},
+      </if>
+      <if test="houseJyr != null" >
+        house_jyr = #{houseJyr,jdbcType=VARCHAR},
+      </if>
+      <if test="houseJjxs != null" >
+        house_jjxs = #{houseJjxs,jdbcType=NUMERIC},
+      </if>
+      <if test="houseYzxs != null" >
+        house_yzxs = #{houseYzxs,jdbcType=NUMERIC},
+      </if>
+      <if test="houseSyjjxs != null" >
+        house_syjjxs = #{houseSyjjxs,jdbcType=NUMERIC},
+      </if>
+      <if test="houseZujin != null" >
+        house_zujin = #{houseZujin,jdbcType=DECIMAL},
+      </if>
+      <if test="houseLouctj != null" >
+        house_louctj = #{houseLouctj,jdbcType=NUMERIC},
+      </if>
+      <if test="houseFangwtj != null" >
+        house_fangwtj = #{houseFangwtj,jdbcType=NUMERIC},
+      </if>
+      <if test="yxwx != null" >
+        yxwx = #{yxwx,jdbcType=VARCHAR},
+      </if>
+      <if test="fysx != null" >
+        fysx = #{fysx,jdbcType=VARCHAR},
+      </if>
+      <if test="czzj != null" >
+        czzj = #{czzj,jdbcType=DECIMAL},
+      </if>
+      <if test="wyf != null" >
+        wyf = #{wyf,jdbcType=DECIMAL},
+      </if>
+      <if test="fwjglx != null" >
+        fwjglx = #{fwjglx,jdbcType=VARCHAR},
+      </if>
+      <if test="wyfylx != null" >
+        wyfylx = #{wyfylx,jdbcType=VARCHAR},
+      </if>
+      <if test="gfyhlx != null" >
+        gfyhlx = #{gfyhlx,jdbcType=VARCHAR},
+      </if>
+      <if test="pictime != null" >
+        pictime = #{pictime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="houseJgrq != null" >
+        house_jgrq = #{houseJgrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="houseJgdj != null" >
+        house_jgdj = #{houseJgdj,jdbcType=CHAR},
+      </if>
+      <if test="houseYtmj != null" >
+        house_ytmj = #{houseYtmj,jdbcType=DECIMAL},
+      </if>
+      <if test="houseFwlb != null" >
+        house_fwlb = #{houseFwlb,jdbcType=CHAR},
+      </if>
+      <if test="houseDmmj != null" >
+        house_dmmj = #{houseDmmj,jdbcType=DECIMAL},
+      </if>
+      <if test="houseJgqx != null" >
+        house_jgqx = #{houseJgqx,jdbcType=DECIMAL},
+      </if>
+      <if test="houseHjxs != null" >
+        house_hjxs = #{houseHjxs,jdbcType=DECIMAL},
+      </if>
+      <if test="houseGnxs != null" >
+        house_gnxs = #{houseGnxs,jdbcType=DECIMAL},
+      </if>
+      <if test="houseFjf != null" >
+        house_fjf = #{houseFjf,jdbcType=DECIMAL},
+      </if>
+      <if test="houseFkyt != null" >
+        house_fkyt = #{houseFkyt,jdbcType=CHAR},
+      </if>
+      <if test="houseXyzf != null" >
+        house_xyzf = #{houseXyzf,jdbcType=CHAR},
+      </if>
+      <if test="houseRarea != null" >
+        house_rarea = #{houseRarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseKind != null" >
+        house_kind = #{houseKind,jdbcType=CHAR},
+      </if>
+      <if test="houseSb != null" >
+        house_sb = #{houseSb,jdbcType=CHAR},
+      </if>
+      <if test="houseSeserial != null" >
+        house_seserial = #{houseSeserial,jdbcType=VARCHAR},
+      </if>
+      <if test="houseA != null" >
+        house_a = #{houseA,jdbcType=CHAR},
+      </if>
+      <if test="houseCrarea != null" >
+        house_crarea = #{houseCrarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseCbarea != null" >
+        house_cbarea = #{houseCbarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseCuarea != null" >
+        house_cuarea = #{houseCuarea,jdbcType=DECIMAL},
+      </if>
+      <if test="houseDtfy != null" >
+        house_dtfy = #{houseDtfy,jdbcType=DECIMAL},
+      </if>
+      <if test="pic != null" >
+        pic = #{pic,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.unknow.entity.House" >
+    update house
+    set house_serial = #{houseSerial,jdbcType=VARCHAR},
+      building_serial = #{buildingSerial,jdbcType=VARCHAR},
+      house_name = #{houseName,jdbcType=VARCHAR},
+      house_in = #{houseIn,jdbcType=CHAR},
+      house_unit = #{houseUnit,jdbcType=VARCHAR},
+      house_barea = #{houseBarea,jdbcType=DECIMAL},
+      house_uarea = #{houseUarea,jdbcType=DECIMAL},
+      house_price = #{housePrice,jdbcType=DECIMAL},
+      house_direction = #{houseDirection,jdbcType=VARCHAR},
+      house_type = #{houseType,jdbcType=VARCHAR},
+      house_state = #{houseState,jdbcType=CHAR},
+      house_quality = #{houseQuality,jdbcType=VARCHAR},
+      house_memo = #{houseMemo,jdbcType=VARCHAR},
+      house_kongzhiyy = #{houseKongzhiyy,jdbcType=VARCHAR},
+      house_dengceng = #{houseDengceng,jdbcType=VARCHAR},
+      house_diceng = #{houseDiceng,jdbcType=VARCHAR},
+      house_xishai = #{houseXishai,jdbcType=VARCHAR},
+      house_qtyh = #{houseQtyh,jdbcType=VARCHAR},
+      house_jyrc = #{houseJyrc,jdbcType=VARCHAR},
+      house_jyr = #{houseJyr,jdbcType=VARCHAR},
+      house_jjxs = #{houseJjxs,jdbcType=NUMERIC},
+      house_yzxs = #{houseYzxs,jdbcType=NUMERIC},
+      house_syjjxs = #{houseSyjjxs,jdbcType=NUMERIC},
+      house_zujin = #{houseZujin,jdbcType=DECIMAL},
+      house_louctj = #{houseLouctj,jdbcType=NUMERIC},
+      house_fangwtj = #{houseFangwtj,jdbcType=NUMERIC},
+      yxwx = #{yxwx,jdbcType=VARCHAR},
+      fysx = #{fysx,jdbcType=VARCHAR},
+      czzj = #{czzj,jdbcType=DECIMAL},
+      wyf = #{wyf,jdbcType=DECIMAL},
+      fwjglx = #{fwjglx,jdbcType=VARCHAR},
+      wyfylx = #{wyfylx,jdbcType=VARCHAR},
+      gfyhlx = #{gfyhlx,jdbcType=VARCHAR},
+      pictime = #{pictime,jdbcType=TIMESTAMP},
+      house_jgrq = #{houseJgrq,jdbcType=TIMESTAMP},
+      house_jgdj = #{houseJgdj,jdbcType=CHAR},
+      house_ytmj = #{houseYtmj,jdbcType=DECIMAL},
+      house_fwlb = #{houseFwlb,jdbcType=CHAR},
+      house_dmmj = #{houseDmmj,jdbcType=DECIMAL},
+      house_jgqx = #{houseJgqx,jdbcType=DECIMAL},
+      house_hjxs = #{houseHjxs,jdbcType=DECIMAL},
+      house_gnxs = #{houseGnxs,jdbcType=DECIMAL},
+      house_fjf = #{houseFjf,jdbcType=DECIMAL},
+      house_fkyt = #{houseFkyt,jdbcType=CHAR},
+      house_xyzf = #{houseXyzf,jdbcType=CHAR},
+      house_rarea = #{houseRarea,jdbcType=DECIMAL},
+      house_kind = #{houseKind,jdbcType=CHAR},
+      house_sb = #{houseSb,jdbcType=CHAR},
+      house_seserial = #{houseSeserial,jdbcType=VARCHAR},
+      house_a = #{houseA,jdbcType=CHAR},
+      house_crarea = #{houseCrarea,jdbcType=DECIMAL},
+      house_cbarea = #{houseCbarea,jdbcType=DECIMAL},
+      house_cuarea = #{houseCuarea,jdbcType=DECIMAL},
+      house_dtfy = #{houseDtfy,jdbcType=DECIMAL},
+      pic = #{pic,jdbcType=LONGVARCHAR}
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.unknow.entity.House" >
+    update house
+    set house_serial = #{houseSerial,jdbcType=VARCHAR},
+      building_serial = #{buildingSerial,jdbcType=VARCHAR},
+      house_name = #{houseName,jdbcType=VARCHAR},
+      house_in = #{houseIn,jdbcType=CHAR},
+      house_unit = #{houseUnit,jdbcType=VARCHAR},
+      house_barea = #{houseBarea,jdbcType=DECIMAL},
+      house_uarea = #{houseUarea,jdbcType=DECIMAL},
+      house_price = #{housePrice,jdbcType=DECIMAL},
+      house_direction = #{houseDirection,jdbcType=VARCHAR},
+      house_type = #{houseType,jdbcType=VARCHAR},
+      house_state = #{houseState,jdbcType=CHAR},
+      house_quality = #{houseQuality,jdbcType=VARCHAR},
+      house_memo = #{houseMemo,jdbcType=VARCHAR},
+      house_kongzhiyy = #{houseKongzhiyy,jdbcType=VARCHAR},
+      house_dengceng = #{houseDengceng,jdbcType=VARCHAR},
+      house_diceng = #{houseDiceng,jdbcType=VARCHAR},
+      house_xishai = #{houseXishai,jdbcType=VARCHAR},
+      house_qtyh = #{houseQtyh,jdbcType=VARCHAR},
+      house_jyrc = #{houseJyrc,jdbcType=VARCHAR},
+      house_jyr = #{houseJyr,jdbcType=VARCHAR},
+      house_jjxs = #{houseJjxs,jdbcType=NUMERIC},
+      house_yzxs = #{houseYzxs,jdbcType=NUMERIC},
+      house_syjjxs = #{houseSyjjxs,jdbcType=NUMERIC},
+      house_zujin = #{houseZujin,jdbcType=DECIMAL},
+      house_louctj = #{houseLouctj,jdbcType=NUMERIC},
+      house_fangwtj = #{houseFangwtj,jdbcType=NUMERIC},
+      yxwx = #{yxwx,jdbcType=VARCHAR},
+      fysx = #{fysx,jdbcType=VARCHAR},
+      czzj = #{czzj,jdbcType=DECIMAL},
+      wyf = #{wyf,jdbcType=DECIMAL},
+      fwjglx = #{fwjglx,jdbcType=VARCHAR},
+      wyfylx = #{wyfylx,jdbcType=VARCHAR},
+      gfyhlx = #{gfyhlx,jdbcType=VARCHAR},
+      pictime = #{pictime,jdbcType=TIMESTAMP},
+      house_jgrq = #{houseJgrq,jdbcType=TIMESTAMP},
+      house_jgdj = #{houseJgdj,jdbcType=CHAR},
+      house_ytmj = #{houseYtmj,jdbcType=DECIMAL},
+      house_fwlb = #{houseFwlb,jdbcType=CHAR},
+      house_dmmj = #{houseDmmj,jdbcType=DECIMAL},
+      house_jgqx = #{houseJgqx,jdbcType=DECIMAL},
+      house_hjxs = #{houseHjxs,jdbcType=DECIMAL},
+      house_gnxs = #{houseGnxs,jdbcType=DECIMAL},
+      house_fjf = #{houseFjf,jdbcType=DECIMAL},
+      house_fkyt = #{houseFkyt,jdbcType=CHAR},
+      house_xyzf = #{houseXyzf,jdbcType=CHAR},
+      house_rarea = #{houseRarea,jdbcType=DECIMAL},
+      house_kind = #{houseKind,jdbcType=CHAR},
+      house_sb = #{houseSb,jdbcType=CHAR},
+      house_seserial = #{houseSeserial,jdbcType=VARCHAR},
+      house_a = #{houseA,jdbcType=CHAR},
+      house_crarea = #{houseCrarea,jdbcType=DECIMAL},
+      house_cbarea = #{houseCbarea,jdbcType=DECIMAL},
+      house_cuarea = #{houseCuarea,jdbcType=DECIMAL},
+      house_dtfy = #{houseDtfy,jdbcType=DECIMAL}
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unknow.mapper.AreaMapper" >
+  <resultMap id="BaseResultMap" type="com.unknow.entity.Area" >
+    <id column="area_serial" property="areaSerial" jdbcType="VARCHAR" />
+    <result column="area_code" property="areaCode" jdbcType="VARCHAR" />
+    <result column="area_name" property="areaName" jdbcType="VARCHAR" />
+    <result column="area_memo" property="areaMemo" jdbcType="VARCHAR" />
+    <result column="building_count" property="buildingCount" jdbcType="INTEGER" />
+    <result column="house_count" property="houseCount" jdbcType="DECIMAL" />
+    <result column="jzmj" property="jzmj" jdbcType="DECIMAL" />
+    <result column="area_zhcode" property="areaZhcode" jdbcType="VARCHAR" />
+    <result column="area_old" property="areaOld" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    area_serial, area_code, area_name, area_memo, building_count, house_count, jzmj, 
+    area_zhcode, area_old
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.unknow.entity.AreaExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from area
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from area
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from area
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.unknow.entity.AreaExample" >
+    delete from area
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.unknow.entity.Area" >
+    insert into area (area_serial, area_code, area_name, 
+      area_memo, building_count, house_count, 
+      jzmj, area_zhcode, area_old
+      )
+    values (#{areaSerial,jdbcType=VARCHAR}, #{areaCode,jdbcType=VARCHAR}, #{areaName,jdbcType=VARCHAR}, 
+      #{areaMemo,jdbcType=VARCHAR}, #{buildingCount,jdbcType=INTEGER}, #{houseCount,jdbcType=DECIMAL}, 
+      #{jzmj,jdbcType=DECIMAL}, #{areaZhcode,jdbcType=VARCHAR}, #{areaOld,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.unknow.entity.Area" >
+    insert into area
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="areaSerial != null" >
+        area_serial,
+      </if>
+      <if test="areaCode != null" >
+        area_code,
+      </if>
+      <if test="areaName != null" >
+        area_name,
+      </if>
+      <if test="areaMemo != null" >
+        area_memo,
+      </if>
+      <if test="buildingCount != null" >
+        building_count,
+      </if>
+      <if test="houseCount != null" >
+        house_count,
+      </if>
+      <if test="jzmj != null" >
+        jzmj,
+      </if>
+      <if test="areaZhcode != null" >
+        area_zhcode,
+      </if>
+      <if test="areaOld != null" >
+        area_old,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="areaSerial != null" >
+        #{areaSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null" >
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaName != null" >
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaMemo != null" >
+        #{areaMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingCount != null" >
+        #{buildingCount,jdbcType=INTEGER},
+      </if>
+      <if test="houseCount != null" >
+        #{houseCount,jdbcType=DECIMAL},
+      </if>
+      <if test="jzmj != null" >
+        #{jzmj,jdbcType=DECIMAL},
+      </if>
+      <if test="areaZhcode != null" >
+        #{areaZhcode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaOld != null" >
+        #{areaOld,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.unknow.entity.AreaExample" resultType="java.lang.Integer" >
+    select count(*) from area
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update area
+    <set >
+      <if test="record.areaSerial != null" >
+        area_serial = #{record.areaSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areaCode != null" >
+        area_code = #{record.areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areaName != null" >
+        area_name = #{record.areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areaMemo != null" >
+        area_memo = #{record.areaMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildingCount != null" >
+        building_count = #{record.buildingCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.houseCount != null" >
+        house_count = #{record.houseCount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.jzmj != null" >
+        jzmj = #{record.jzmj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.areaZhcode != null" >
+        area_zhcode = #{record.areaZhcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areaOld != null" >
+        area_old = #{record.areaOld,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update area
+    set area_serial = #{record.areaSerial,jdbcType=VARCHAR},
+      area_code = #{record.areaCode,jdbcType=VARCHAR},
+      area_name = #{record.areaName,jdbcType=VARCHAR},
+      area_memo = #{record.areaMemo,jdbcType=VARCHAR},
+      building_count = #{record.buildingCount,jdbcType=INTEGER},
+      house_count = #{record.houseCount,jdbcType=DECIMAL},
+      jzmj = #{record.jzmj,jdbcType=DECIMAL},
+      area_zhcode = #{record.areaZhcode,jdbcType=VARCHAR},
+      area_old = #{record.areaOld,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.unknow.entity.Area" >
+    update area
+    <set >
+      <if test="areaCode != null" >
+        area_code = #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaName != null" >
+        area_name = #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaMemo != null" >
+        area_memo = #{areaMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingCount != null" >
+        building_count = #{buildingCount,jdbcType=INTEGER},
+      </if>
+      <if test="houseCount != null" >
+        house_count = #{houseCount,jdbcType=DECIMAL},
+      </if>
+      <if test="jzmj != null" >
+        jzmj = #{jzmj,jdbcType=DECIMAL},
+      </if>
+      <if test="areaZhcode != null" >
+        area_zhcode = #{areaZhcode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaOld != null" >
+        area_old = #{areaOld,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.unknow.entity.Area" >
+    update area
+    set area_code = #{areaCode,jdbcType=VARCHAR},
+      area_name = #{areaName,jdbcType=VARCHAR},
+      area_memo = #{areaMemo,jdbcType=VARCHAR},
+      building_count = #{buildingCount,jdbcType=INTEGER},
+      house_count = #{houseCount,jdbcType=DECIMAL},
+      jzmj = #{jzmj,jdbcType=DECIMAL},
+      area_zhcode = #{areaZhcode,jdbcType=VARCHAR},
+      area_old = #{areaOld,jdbcType=VARCHAR}
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+  </update>
+<select id="findTree" resultMap="BaseResultMap">
+  Select  area_zhcode ,  area_name  from area where len(area_serial) &lt;=  7  order by area_zhcode;
+</select>
+
+
+</mapper>

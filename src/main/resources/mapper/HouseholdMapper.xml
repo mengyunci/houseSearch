@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unknow.mapper.HouseholdMapper" >
+  <resultMap id="BaseResultMap" type="com.unknow.entity.Household" >
+    <id column="area_serial" property="areaSerial" jdbcType="VARCHAR" />
+    <id column="employee_serial" property="employeeSerial" jdbcType="VARCHAR" />
+    <result column="house_serial" property="houseSerial" jdbcType="VARCHAR" />
+    <result column="building_serial" property="buildingSerial" jdbcType="VARCHAR" />
+    <result column="household_date" property="householdDate" jdbcType="TIMESTAMP" />
+    <result column="household_get" property="householdGet" jdbcType="VARCHAR" />
+    <result column="household_type" property="householdType" jdbcType="VARCHAR" />
+    <result column="household_rate" property="householdRate" jdbcType="DECIMAL" />
+    <result column="household_code" property="householdCode" jdbcType="VARCHAR" />
+    <result column="household_lend" property="householdLend" jdbcType="TIMESTAMP" />
+    <result column="household_person" property="householdPerson" jdbcType="VARCHAR" />
+    <result column="household_mem" property="householdMem" jdbcType="VARCHAR" />
+    <result column="household_rent" property="householdRent" jdbcType="DECIMAL" />
+    <result column="household_method" property="householdMethod" jdbcType="CHAR" />
+    <result column="household_fund" property="householdFund" jdbcType="DECIMAL" />
+    <result column="household_day" property="householdDay" jdbcType="TIMESTAMP" />
+    <result column="xh" property="xh" jdbcType="INTEGER" />
+    <result column="household_zujbt" property="householdZujbt" jdbcType="DECIMAL" />
+    <result column="household_fzjsgs" property="householdFzjsgs" jdbcType="VARCHAR" />
+    <result column="household_ytk" property="householdYtk" jdbcType="CHAR" />
+    <result column="household_ytkdate" property="householdYtkdate" jdbcType="TIMESTAMP" />
+    <result column="household_bzzj" property="householdBzzj" jdbcType="CHAR" />
+    <result column="household_bzzjcode" property="householdBzzjcode" jdbcType="CHAR" />
+    <result column="household_fjgs" property="householdFjgs" jdbcType="VARCHAR" />
+    <result column="household_fjje" property="householdFjje" jdbcType="DECIMAL" />
+    <result column="household_zjtiao" property="householdZjtiao" jdbcType="DECIMAL" />
+    <result column="household_zjchaoqi" property="householdZjchaoqi" jdbcType="DECIMAL" />
+    <result column="household_sumzj" property="householdSumzj" jdbcType="DECIMAL" />
+    <result column="household_belu" property="householdBelu" jdbcType="DECIMAL" />
+    <result column="household_tufstat" property="householdTufstat" jdbcType="VARCHAR" />
+    <result column="household_xsmj" property="householdXsmj" jdbcType="DECIMAL" />
+    <result column="household_cbj" property="householdCbj" jdbcType="DECIMAL" />
+    <result column="household_bzj" property="householdBzj" jdbcType="DECIMAL" />
+    <result column="household_lctjl" property="householdLctjl" jdbcType="DECIMAL" />
+    <result column="household_cxtjl" property="householdCxtjl" jdbcType="DECIMAL" />
+    <result column="household_gntjl" property="householdGntjl" jdbcType="DECIMAL" />
+    <result column="household_ddtjl" property="householdDdtjl" jdbcType="DECIMAL" />
+    <result column="household_zjbz" property="householdZjbz" jdbcType="VARCHAR" />
+    <result column="household_zc" property="householdZc" jdbcType="VARCHAR" />
+    <result column="household_zw" property="householdZw" jdbcType="VARCHAR" />
+    <result column="household_tzsj" property="householdTzsj" jdbcType="TIMESTAMP" />
+    <result column="household_sbzjstat" property="householdSbzjstat" jdbcType="CHAR" />
+    <result column="household_ifytk" property="householdIfytk" jdbcType="CHAR" />
+    <result column="household_ytkmemo" property="householdYtkmemo" jdbcType="VARCHAR" />
+    <result column="household_tfkind" property="householdTfkind" jdbcType="CHAR" />
+    <result column="household_tfreason" property="householdTfreason" jdbcType="CHAR" />
+    <result column="household_tfdate" property="householdTfdate" jdbcType="TIMESTAMP" />
+    <result column="household_tfmemo" property="householdTfmemo" jdbcType="VARCHAR" />
+    <result column="household_newserial" property="householdNewserial" jdbcType="CHAR" />
+    <result column="household_ghdate" property="householdGhdate" jdbcType="TIMESTAMP" />
+    <result column="household_ghreason" property="householdGhreason" jdbcType="CHAR" />
+    <result column="household_ghmemo" property="householdGhmemo" jdbcType="VARCHAR" />
+    <result column="household_hzgh" property="householdHzgh" jdbcType="CHAR" />
+    <result column="household_gfjkstat" property="householdGfjkstat" jdbcType="CHAR" />
+    <result column="household_ytfdate" property="householdYtfdate" jdbcType="TIMESTAMP" />
+    <result column="household_xzfserial" property="householdXzfserial" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    area_serial, employee_serial, house_serial, building_serial, household_date, household_get, 
+    household_type, household_rate, household_code, household_lend, household_person, 
+    household_mem, household_rent, household_method, household_fund, household_day, xh, 
+    household_zujbt, household_fzjsgs, household_ytk, household_ytkdate, household_bzzj, 
+    household_bzzjcode, household_fjgs, household_fjje, household_zjtiao, household_zjchaoqi, 
+    household_sumzj, household_belu, household_tufstat, household_xsmj, household_cbj, 
+    household_bzj, household_lctjl, household_cxtjl, household_gntjl, household_ddtjl, 
+    household_zjbz, household_zc, household_zw, household_tzsj, household_sbzjstat, household_ifytk, 
+    household_ytkmemo, household_tfkind, household_tfreason, household_tfdate, household_tfmemo, 
+    household_newserial, household_ghdate, household_ghreason, household_ghmemo, household_hzgh, 
+    household_gfjkstat, household_ytfdate, household_xzfserial
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.unknow.entity.HouseholdExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from household
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.unknow.entity.HouseholdKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from household
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+      and employee_serial = #{employeeSerial,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.unknow.entity.HouseholdKey" >
+    delete from household
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+      and employee_serial = #{employeeSerial,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.unknow.entity.HouseholdExample" >
+    delete from household
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.unknow.entity.Household" >
+    insert into household (area_serial, employee_serial, house_serial, 
+      building_serial, household_date, household_get, 
+      household_type, household_rate, household_code, 
+      household_lend, household_person, household_mem, 
+      household_rent, household_method, household_fund, 
+      household_day, xh, household_zujbt, 
+      household_fzjsgs, household_ytk, household_ytkdate, 
+      household_bzzj, household_bzzjcode, household_fjgs, 
+      household_fjje, household_zjtiao, household_zjchaoqi, 
+      household_sumzj, household_belu, household_tufstat, 
+      household_xsmj, household_cbj, household_bzj, 
+      household_lctjl, household_cxtjl, household_gntjl, 
+      household_ddtjl, household_zjbz, household_zc, 
+      household_zw, household_tzsj, household_sbzjstat, 
+      household_ifytk, household_ytkmemo, household_tfkind, 
+      household_tfreason, household_tfdate, household_tfmemo, 
+      household_newserial, household_ghdate, household_ghreason, 
+      household_ghmemo, household_hzgh, household_gfjkstat, 
+      household_ytfdate, household_xzfserial)
+    values (#{areaSerial,jdbcType=VARCHAR}, #{employeeSerial,jdbcType=VARCHAR}, #{houseSerial,jdbcType=VARCHAR}, 
+      #{buildingSerial,jdbcType=VARCHAR}, #{householdDate,jdbcType=TIMESTAMP}, #{householdGet,jdbcType=VARCHAR}, 
+      #{householdType,jdbcType=VARCHAR}, #{householdRate,jdbcType=DECIMAL}, #{householdCode,jdbcType=VARCHAR}, 
+      #{householdLend,jdbcType=TIMESTAMP}, #{householdPerson,jdbcType=VARCHAR}, #{householdMem,jdbcType=VARCHAR}, 
+      #{householdRent,jdbcType=DECIMAL}, #{householdMethod,jdbcType=CHAR}, #{householdFund,jdbcType=DECIMAL}, 
+      #{householdDay,jdbcType=TIMESTAMP}, #{xh,jdbcType=INTEGER}, #{householdZujbt,jdbcType=DECIMAL}, 
+      #{householdFzjsgs,jdbcType=VARCHAR}, #{householdYtk,jdbcType=CHAR}, #{householdYtkdate,jdbcType=TIMESTAMP}, 
+      #{householdBzzj,jdbcType=CHAR}, #{householdBzzjcode,jdbcType=CHAR}, #{householdFjgs,jdbcType=VARCHAR}, 
+      #{householdFjje,jdbcType=DECIMAL}, #{householdZjtiao,jdbcType=DECIMAL}, #{householdZjchaoqi,jdbcType=DECIMAL}, 
+      #{householdSumzj,jdbcType=DECIMAL}, #{householdBelu,jdbcType=DECIMAL}, #{householdTufstat,jdbcType=VARCHAR}, 
+      #{householdXsmj,jdbcType=DECIMAL}, #{householdCbj,jdbcType=DECIMAL}, #{householdBzj,jdbcType=DECIMAL}, 
+      #{householdLctjl,jdbcType=DECIMAL}, #{householdCxtjl,jdbcType=DECIMAL}, #{householdGntjl,jdbcType=DECIMAL}, 
+      #{householdDdtjl,jdbcType=DECIMAL}, #{householdZjbz,jdbcType=VARCHAR}, #{householdZc,jdbcType=VARCHAR}, 
+      #{householdZw,jdbcType=VARCHAR}, #{householdTzsj,jdbcType=TIMESTAMP}, #{householdSbzjstat,jdbcType=CHAR}, 
+      #{householdIfytk,jdbcType=CHAR}, #{householdYtkmemo,jdbcType=VARCHAR}, #{householdTfkind,jdbcType=CHAR}, 
+      #{householdTfreason,jdbcType=CHAR}, #{householdTfdate,jdbcType=TIMESTAMP}, #{householdTfmemo,jdbcType=VARCHAR}, 
+      #{householdNewserial,jdbcType=CHAR}, #{householdGhdate,jdbcType=TIMESTAMP}, #{householdGhreason,jdbcType=CHAR}, 
+      #{householdGhmemo,jdbcType=VARCHAR}, #{householdHzgh,jdbcType=CHAR}, #{householdGfjkstat,jdbcType=CHAR}, 
+      #{householdYtfdate,jdbcType=TIMESTAMP}, #{householdXzfserial,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.unknow.entity.Household" >
+    insert into household
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="areaSerial != null" >
+        area_serial,
+      </if>
+      <if test="employeeSerial != null" >
+        employee_serial,
+      </if>
+      <if test="houseSerial != null" >
+        house_serial,
+      </if>
+      <if test="buildingSerial != null" >
+        building_serial,
+      </if>
+      <if test="householdDate != null" >
+        household_date,
+      </if>
+      <if test="householdGet != null" >
+        household_get,
+      </if>
+      <if test="householdType != null" >
+        household_type,
+      </if>
+      <if test="householdRate != null" >
+        household_rate,
+      </if>
+      <if test="householdCode != null" >
+        household_code,
+      </if>
+      <if test="householdLend != null" >
+        household_lend,
+      </if>
+      <if test="householdPerson != null" >
+        household_person,
+      </if>
+      <if test="householdMem != null" >
+        household_mem,
+      </if>
+      <if test="householdRent != null" >
+        household_rent,
+      </if>
+      <if test="householdMethod != null" >
+        household_method,
+      </if>
+      <if test="householdFund != null" >
+        household_fund,
+      </if>
+      <if test="householdDay != null" >
+        household_day,
+      </if>
+      <if test="xh != null" >
+        xh,
+      </if>
+      <if test="householdZujbt != null" >
+        household_zujbt,
+      </if>
+      <if test="householdFzjsgs != null" >
+        household_fzjsgs,
+      </if>
+      <if test="householdYtk != null" >
+        household_ytk,
+      </if>
+      <if test="householdYtkdate != null" >
+        household_ytkdate,
+      </if>
+      <if test="householdBzzj != null" >
+        household_bzzj,
+      </if>
+      <if test="householdBzzjcode != null" >
+        household_bzzjcode,
+      </if>
+      <if test="householdFjgs != null" >
+        household_fjgs,
+      </if>
+      <if test="householdFjje != null" >
+        household_fjje,
+      </if>
+      <if test="householdZjtiao != null" >
+        household_zjtiao,
+      </if>
+      <if test="householdZjchaoqi != null" >
+        household_zjchaoqi,
+      </if>
+      <if test="householdSumzj != null" >
+        household_sumzj,
+      </if>
+      <if test="householdBelu != null" >
+        household_belu,
+      </if>
+      <if test="householdTufstat != null" >
+        household_tufstat,
+      </if>
+      <if test="householdXsmj != null" >
+        household_xsmj,
+      </if>
+      <if test="householdCbj != null" >
+        household_cbj,
+      </if>
+      <if test="householdBzj != null" >
+        household_bzj,
+      </if>
+      <if test="householdLctjl != null" >
+        household_lctjl,
+      </if>
+      <if test="householdCxtjl != null" >
+        household_cxtjl,
+      </if>
+      <if test="householdGntjl != null" >
+        household_gntjl,
+      </if>
+      <if test="householdDdtjl != null" >
+        household_ddtjl,
+      </if>
+      <if test="householdZjbz != null" >
+        household_zjbz,
+      </if>
+      <if test="householdZc != null" >
+        household_zc,
+      </if>
+      <if test="householdZw != null" >
+        household_zw,
+      </if>
+      <if test="householdTzsj != null" >
+        household_tzsj,
+      </if>
+      <if test="householdSbzjstat != null" >
+        household_sbzjstat,
+      </if>
+      <if test="householdIfytk != null" >
+        household_ifytk,
+      </if>
+      <if test="householdYtkmemo != null" >
+        household_ytkmemo,
+      </if>
+      <if test="householdTfkind != null" >
+        household_tfkind,
+      </if>
+      <if test="householdTfreason != null" >
+        household_tfreason,
+      </if>
+      <if test="householdTfdate != null" >
+        household_tfdate,
+      </if>
+      <if test="householdTfmemo != null" >
+        household_tfmemo,
+      </if>
+      <if test="householdNewserial != null" >
+        household_newserial,
+      </if>
+      <if test="householdGhdate != null" >
+        household_ghdate,
+      </if>
+      <if test="householdGhreason != null" >
+        household_ghreason,
+      </if>
+      <if test="householdGhmemo != null" >
+        household_ghmemo,
+      </if>
+      <if test="householdHzgh != null" >
+        household_hzgh,
+      </if>
+      <if test="householdGfjkstat != null" >
+        household_gfjkstat,
+      </if>
+      <if test="householdYtfdate != null" >
+        household_ytfdate,
+      </if>
+      <if test="householdXzfserial != null" >
+        household_xzfserial,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="areaSerial != null" >
+        #{areaSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeSerial != null" >
+        #{employeeSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="houseSerial != null" >
+        #{houseSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingSerial != null" >
+        #{buildingSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="householdDate != null" >
+        #{householdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdGet != null" >
+        #{householdGet,jdbcType=VARCHAR},
+      </if>
+      <if test="householdType != null" >
+        #{householdType,jdbcType=VARCHAR},
+      </if>
+      <if test="householdRate != null" >
+        #{householdRate,jdbcType=DECIMAL},
+      </if>
+      <if test="householdCode != null" >
+        #{householdCode,jdbcType=VARCHAR},
+      </if>
+      <if test="householdLend != null" >
+        #{householdLend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdPerson != null" >
+        #{householdPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="householdMem != null" >
+        #{householdMem,jdbcType=VARCHAR},
+      </if>
+      <if test="householdRent != null" >
+        #{householdRent,jdbcType=DECIMAL},
+      </if>
+      <if test="householdMethod != null" >
+        #{householdMethod,jdbcType=CHAR},
+      </if>
+      <if test="householdFund != null" >
+        #{householdFund,jdbcType=DECIMAL},
+      </if>
+      <if test="householdDay != null" >
+        #{householdDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="xh != null" >
+        #{xh,jdbcType=INTEGER},
+      </if>
+      <if test="householdZujbt != null" >
+        #{householdZujbt,jdbcType=DECIMAL},
+      </if>
+      <if test="householdFzjsgs != null" >
+        #{householdFzjsgs,jdbcType=VARCHAR},
+      </if>
+      <if test="householdYtk != null" >
+        #{householdYtk,jdbcType=CHAR},
+      </if>
+      <if test="householdYtkdate != null" >
+        #{householdYtkdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdBzzj != null" >
+        #{householdBzzj,jdbcType=CHAR},
+      </if>
+      <if test="householdBzzjcode != null" >
+        #{householdBzzjcode,jdbcType=CHAR},
+      </if>
+      <if test="householdFjgs != null" >
+        #{householdFjgs,jdbcType=VARCHAR},
+      </if>
+      <if test="householdFjje != null" >
+        #{householdFjje,jdbcType=DECIMAL},
+      </if>
+      <if test="householdZjtiao != null" >
+        #{householdZjtiao,jdbcType=DECIMAL},
+      </if>
+      <if test="householdZjchaoqi != null" >
+        #{householdZjchaoqi,jdbcType=DECIMAL},
+      </if>
+      <if test="householdSumzj != null" >
+        #{householdSumzj,jdbcType=DECIMAL},
+      </if>
+      <if test="householdBelu != null" >
+        #{householdBelu,jdbcType=DECIMAL},
+      </if>
+      <if test="householdTufstat != null" >
+        #{householdTufstat,jdbcType=VARCHAR},
+      </if>
+      <if test="householdXsmj != null" >
+        #{householdXsmj,jdbcType=DECIMAL},
+      </if>
+      <if test="householdCbj != null" >
+        #{householdCbj,jdbcType=DECIMAL},
+      </if>
+      <if test="householdBzj != null" >
+        #{householdBzj,jdbcType=DECIMAL},
+      </if>
+      <if test="householdLctjl != null" >
+        #{householdLctjl,jdbcType=DECIMAL},
+      </if>
+      <if test="householdCxtjl != null" >
+        #{householdCxtjl,jdbcType=DECIMAL},
+      </if>
+      <if test="householdGntjl != null" >
+        #{householdGntjl,jdbcType=DECIMAL},
+      </if>
+      <if test="householdDdtjl != null" >
+        #{householdDdtjl,jdbcType=DECIMAL},
+      </if>
+      <if test="householdZjbz != null" >
+        #{householdZjbz,jdbcType=VARCHAR},
+      </if>
+      <if test="householdZc != null" >
+        #{householdZc,jdbcType=VARCHAR},
+      </if>
+      <if test="householdZw != null" >
+        #{householdZw,jdbcType=VARCHAR},
+      </if>
+      <if test="householdTzsj != null" >
+        #{householdTzsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdSbzjstat != null" >
+        #{householdSbzjstat,jdbcType=CHAR},
+      </if>
+      <if test="householdIfytk != null" >
+        #{householdIfytk,jdbcType=CHAR},
+      </if>
+      <if test="householdYtkmemo != null" >
+        #{householdYtkmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="householdTfkind != null" >
+        #{householdTfkind,jdbcType=CHAR},
+      </if>
+      <if test="householdTfreason != null" >
+        #{householdTfreason,jdbcType=CHAR},
+      </if>
+      <if test="householdTfdate != null" >
+        #{householdTfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdTfmemo != null" >
+        #{householdTfmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="householdNewserial != null" >
+        #{householdNewserial,jdbcType=CHAR},
+      </if>
+      <if test="householdGhdate != null" >
+        #{householdGhdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdGhreason != null" >
+        #{householdGhreason,jdbcType=CHAR},
+      </if>
+      <if test="householdGhmemo != null" >
+        #{householdGhmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="householdHzgh != null" >
+        #{householdHzgh,jdbcType=CHAR},
+      </if>
+      <if test="householdGfjkstat != null" >
+        #{householdGfjkstat,jdbcType=CHAR},
+      </if>
+      <if test="householdYtfdate != null" >
+        #{householdYtfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdXzfserial != null" >
+        #{householdXzfserial,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.unknow.entity.HouseholdExample" resultType="java.lang.Integer" >
+    select count(*) from household
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update household
+    <set >
+      <if test="record.areaSerial != null" >
+        area_serial = #{record.areaSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeSerial != null" >
+        employee_serial = #{record.employeeSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseSerial != null" >
+        house_serial = #{record.houseSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildingSerial != null" >
+        building_serial = #{record.buildingSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdDate != null" >
+        household_date = #{record.householdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.householdGet != null" >
+        household_get = #{record.householdGet,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdType != null" >
+        household_type = #{record.householdType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdRate != null" >
+        household_rate = #{record.householdRate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdCode != null" >
+        household_code = #{record.householdCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdLend != null" >
+        household_lend = #{record.householdLend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.householdPerson != null" >
+        household_person = #{record.householdPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdMem != null" >
+        household_mem = #{record.householdMem,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdRent != null" >
+        household_rent = #{record.householdRent,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdMethod != null" >
+        household_method = #{record.householdMethod,jdbcType=CHAR},
+      </if>
+      <if test="record.householdFund != null" >
+        household_fund = #{record.householdFund,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdDay != null" >
+        household_day = #{record.householdDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.xh != null" >
+        xh = #{record.xh,jdbcType=INTEGER},
+      </if>
+      <if test="record.householdZujbt != null" >
+        household_zujbt = #{record.householdZujbt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdFzjsgs != null" >
+        household_fzjsgs = #{record.householdFzjsgs,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdYtk != null" >
+        household_ytk = #{record.householdYtk,jdbcType=CHAR},
+      </if>
+      <if test="record.householdYtkdate != null" >
+        household_ytkdate = #{record.householdYtkdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.householdBzzj != null" >
+        household_bzzj = #{record.householdBzzj,jdbcType=CHAR},
+      </if>
+      <if test="record.householdBzzjcode != null" >
+        household_bzzjcode = #{record.householdBzzjcode,jdbcType=CHAR},
+      </if>
+      <if test="record.householdFjgs != null" >
+        household_fjgs = #{record.householdFjgs,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdFjje != null" >
+        household_fjje = #{record.householdFjje,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdZjtiao != null" >
+        household_zjtiao = #{record.householdZjtiao,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdZjchaoqi != null" >
+        household_zjchaoqi = #{record.householdZjchaoqi,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdSumzj != null" >
+        household_sumzj = #{record.householdSumzj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdBelu != null" >
+        household_belu = #{record.householdBelu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdTufstat != null" >
+        household_tufstat = #{record.householdTufstat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdXsmj != null" >
+        household_xsmj = #{record.householdXsmj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdCbj != null" >
+        household_cbj = #{record.householdCbj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdBzj != null" >
+        household_bzj = #{record.householdBzj,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdLctjl != null" >
+        household_lctjl = #{record.householdLctjl,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdCxtjl != null" >
+        household_cxtjl = #{record.householdCxtjl,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdGntjl != null" >
+        household_gntjl = #{record.householdGntjl,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdDdtjl != null" >
+        household_ddtjl = #{record.householdDdtjl,jdbcType=DECIMAL},
+      </if>
+      <if test="record.householdZjbz != null" >
+        household_zjbz = #{record.householdZjbz,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdZc != null" >
+        household_zc = #{record.householdZc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdZw != null" >
+        household_zw = #{record.householdZw,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdTzsj != null" >
+        household_tzsj = #{record.householdTzsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.householdSbzjstat != null" >
+        household_sbzjstat = #{record.householdSbzjstat,jdbcType=CHAR},
+      </if>
+      <if test="record.householdIfytk != null" >
+        household_ifytk = #{record.householdIfytk,jdbcType=CHAR},
+      </if>
+      <if test="record.householdYtkmemo != null" >
+        household_ytkmemo = #{record.householdYtkmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdTfkind != null" >
+        household_tfkind = #{record.householdTfkind,jdbcType=CHAR},
+      </if>
+      <if test="record.householdTfreason != null" >
+        household_tfreason = #{record.householdTfreason,jdbcType=CHAR},
+      </if>
+      <if test="record.householdTfdate != null" >
+        household_tfdate = #{record.householdTfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.householdTfmemo != null" >
+        household_tfmemo = #{record.householdTfmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdNewserial != null" >
+        household_newserial = #{record.householdNewserial,jdbcType=CHAR},
+      </if>
+      <if test="record.householdGhdate != null" >
+        household_ghdate = #{record.householdGhdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.householdGhreason != null" >
+        household_ghreason = #{record.householdGhreason,jdbcType=CHAR},
+      </if>
+      <if test="record.householdGhmemo != null" >
+        household_ghmemo = #{record.householdGhmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.householdHzgh != null" >
+        household_hzgh = #{record.householdHzgh,jdbcType=CHAR},
+      </if>
+      <if test="record.householdGfjkstat != null" >
+        household_gfjkstat = #{record.householdGfjkstat,jdbcType=CHAR},
+      </if>
+      <if test="record.householdYtfdate != null" >
+        household_ytfdate = #{record.householdYtfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.householdXzfserial != null" >
+        household_xzfserial = #{record.householdXzfserial,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update household
+    set area_serial = #{record.areaSerial,jdbcType=VARCHAR},
+      employee_serial = #{record.employeeSerial,jdbcType=VARCHAR},
+      house_serial = #{record.houseSerial,jdbcType=VARCHAR},
+      building_serial = #{record.buildingSerial,jdbcType=VARCHAR},
+      household_date = #{record.householdDate,jdbcType=TIMESTAMP},
+      household_get = #{record.householdGet,jdbcType=VARCHAR},
+      household_type = #{record.householdType,jdbcType=VARCHAR},
+      household_rate = #{record.householdRate,jdbcType=DECIMAL},
+      household_code = #{record.householdCode,jdbcType=VARCHAR},
+      household_lend = #{record.householdLend,jdbcType=TIMESTAMP},
+      household_person = #{record.householdPerson,jdbcType=VARCHAR},
+      household_mem = #{record.householdMem,jdbcType=VARCHAR},
+      household_rent = #{record.householdRent,jdbcType=DECIMAL},
+      household_method = #{record.householdMethod,jdbcType=CHAR},
+      household_fund = #{record.householdFund,jdbcType=DECIMAL},
+      household_day = #{record.householdDay,jdbcType=TIMESTAMP},
+      xh = #{record.xh,jdbcType=INTEGER},
+      household_zujbt = #{record.householdZujbt,jdbcType=DECIMAL},
+      household_fzjsgs = #{record.householdFzjsgs,jdbcType=VARCHAR},
+      household_ytk = #{record.householdYtk,jdbcType=CHAR},
+      household_ytkdate = #{record.householdYtkdate,jdbcType=TIMESTAMP},
+      household_bzzj = #{record.householdBzzj,jdbcType=CHAR},
+      household_bzzjcode = #{record.householdBzzjcode,jdbcType=CHAR},
+      household_fjgs = #{record.householdFjgs,jdbcType=VARCHAR},
+      household_fjje = #{record.householdFjje,jdbcType=DECIMAL},
+      household_zjtiao = #{record.householdZjtiao,jdbcType=DECIMAL},
+      household_zjchaoqi = #{record.householdZjchaoqi,jdbcType=DECIMAL},
+      household_sumzj = #{record.householdSumzj,jdbcType=DECIMAL},
+      household_belu = #{record.householdBelu,jdbcType=DECIMAL},
+      household_tufstat = #{record.householdTufstat,jdbcType=VARCHAR},
+      household_xsmj = #{record.householdXsmj,jdbcType=DECIMAL},
+      household_cbj = #{record.householdCbj,jdbcType=DECIMAL},
+      household_bzj = #{record.householdBzj,jdbcType=DECIMAL},
+      household_lctjl = #{record.householdLctjl,jdbcType=DECIMAL},
+      household_cxtjl = #{record.householdCxtjl,jdbcType=DECIMAL},
+      household_gntjl = #{record.householdGntjl,jdbcType=DECIMAL},
+      household_ddtjl = #{record.householdDdtjl,jdbcType=DECIMAL},
+      household_zjbz = #{record.householdZjbz,jdbcType=VARCHAR},
+      household_zc = #{record.householdZc,jdbcType=VARCHAR},
+      household_zw = #{record.householdZw,jdbcType=VARCHAR},
+      household_tzsj = #{record.householdTzsj,jdbcType=TIMESTAMP},
+      household_sbzjstat = #{record.householdSbzjstat,jdbcType=CHAR},
+      household_ifytk = #{record.householdIfytk,jdbcType=CHAR},
+      household_ytkmemo = #{record.householdYtkmemo,jdbcType=VARCHAR},
+      household_tfkind = #{record.householdTfkind,jdbcType=CHAR},
+      household_tfreason = #{record.householdTfreason,jdbcType=CHAR},
+      household_tfdate = #{record.householdTfdate,jdbcType=TIMESTAMP},
+      household_tfmemo = #{record.householdTfmemo,jdbcType=VARCHAR},
+      household_newserial = #{record.householdNewserial,jdbcType=CHAR},
+      household_ghdate = #{record.householdGhdate,jdbcType=TIMESTAMP},
+      household_ghreason = #{record.householdGhreason,jdbcType=CHAR},
+      household_ghmemo = #{record.householdGhmemo,jdbcType=VARCHAR},
+      household_hzgh = #{record.householdHzgh,jdbcType=CHAR},
+      household_gfjkstat = #{record.householdGfjkstat,jdbcType=CHAR},
+      household_ytfdate = #{record.householdYtfdate,jdbcType=TIMESTAMP},
+      household_xzfserial = #{record.householdXzfserial,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.unknow.entity.Household" >
+    update household
+    <set >
+      <if test="houseSerial != null" >
+        house_serial = #{houseSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingSerial != null" >
+        building_serial = #{buildingSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="householdDate != null" >
+        household_date = #{householdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdGet != null" >
+        household_get = #{householdGet,jdbcType=VARCHAR},
+      </if>
+      <if test="householdType != null" >
+        household_type = #{householdType,jdbcType=VARCHAR},
+      </if>
+      <if test="householdRate != null" >
+        household_rate = #{householdRate,jdbcType=DECIMAL},
+      </if>
+      <if test="householdCode != null" >
+        household_code = #{householdCode,jdbcType=VARCHAR},
+      </if>
+      <if test="householdLend != null" >
+        household_lend = #{householdLend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdPerson != null" >
+        household_person = #{householdPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="householdMem != null" >
+        household_mem = #{householdMem,jdbcType=VARCHAR},
+      </if>
+      <if test="householdRent != null" >
+        household_rent = #{householdRent,jdbcType=DECIMAL},
+      </if>
+      <if test="householdMethod != null" >
+        household_method = #{householdMethod,jdbcType=CHAR},
+      </if>
+      <if test="householdFund != null" >
+        household_fund = #{householdFund,jdbcType=DECIMAL},
+      </if>
+      <if test="householdDay != null" >
+        household_day = #{householdDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="xh != null" >
+        xh = #{xh,jdbcType=INTEGER},
+      </if>
+      <if test="householdZujbt != null" >
+        household_zujbt = #{householdZujbt,jdbcType=DECIMAL},
+      </if>
+      <if test="householdFzjsgs != null" >
+        household_fzjsgs = #{householdFzjsgs,jdbcType=VARCHAR},
+      </if>
+      <if test="householdYtk != null" >
+        household_ytk = #{householdYtk,jdbcType=CHAR},
+      </if>
+      <if test="householdYtkdate != null" >
+        household_ytkdate = #{householdYtkdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdBzzj != null" >
+        household_bzzj = #{householdBzzj,jdbcType=CHAR},
+      </if>
+      <if test="householdBzzjcode != null" >
+        household_bzzjcode = #{householdBzzjcode,jdbcType=CHAR},
+      </if>
+      <if test="householdFjgs != null" >
+        household_fjgs = #{householdFjgs,jdbcType=VARCHAR},
+      </if>
+      <if test="householdFjje != null" >
+        household_fjje = #{householdFjje,jdbcType=DECIMAL},
+      </if>
+      <if test="householdZjtiao != null" >
+        household_zjtiao = #{householdZjtiao,jdbcType=DECIMAL},
+      </if>
+      <if test="householdZjchaoqi != null" >
+        household_zjchaoqi = #{householdZjchaoqi,jdbcType=DECIMAL},
+      </if>
+      <if test="householdSumzj != null" >
+        household_sumzj = #{householdSumzj,jdbcType=DECIMAL},
+      </if>
+      <if test="householdBelu != null" >
+        household_belu = #{householdBelu,jdbcType=DECIMAL},
+      </if>
+      <if test="householdTufstat != null" >
+        household_tufstat = #{householdTufstat,jdbcType=VARCHAR},
+      </if>
+      <if test="householdXsmj != null" >
+        household_xsmj = #{householdXsmj,jdbcType=DECIMAL},
+      </if>
+      <if test="householdCbj != null" >
+        household_cbj = #{householdCbj,jdbcType=DECIMAL},
+      </if>
+      <if test="householdBzj != null" >
+        household_bzj = #{householdBzj,jdbcType=DECIMAL},
+      </if>
+      <if test="householdLctjl != null" >
+        household_lctjl = #{householdLctjl,jdbcType=DECIMAL},
+      </if>
+      <if test="householdCxtjl != null" >
+        household_cxtjl = #{householdCxtjl,jdbcType=DECIMAL},
+      </if>
+      <if test="householdGntjl != null" >
+        household_gntjl = #{householdGntjl,jdbcType=DECIMAL},
+      </if>
+      <if test="householdDdtjl != null" >
+        household_ddtjl = #{householdDdtjl,jdbcType=DECIMAL},
+      </if>
+      <if test="householdZjbz != null" >
+        household_zjbz = #{householdZjbz,jdbcType=VARCHAR},
+      </if>
+      <if test="householdZc != null" >
+        household_zc = #{householdZc,jdbcType=VARCHAR},
+      </if>
+      <if test="householdZw != null" >
+        household_zw = #{householdZw,jdbcType=VARCHAR},
+      </if>
+      <if test="householdTzsj != null" >
+        household_tzsj = #{householdTzsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdSbzjstat != null" >
+        household_sbzjstat = #{householdSbzjstat,jdbcType=CHAR},
+      </if>
+      <if test="householdIfytk != null" >
+        household_ifytk = #{householdIfytk,jdbcType=CHAR},
+      </if>
+      <if test="householdYtkmemo != null" >
+        household_ytkmemo = #{householdYtkmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="householdTfkind != null" >
+        household_tfkind = #{householdTfkind,jdbcType=CHAR},
+      </if>
+      <if test="householdTfreason != null" >
+        household_tfreason = #{householdTfreason,jdbcType=CHAR},
+      </if>
+      <if test="householdTfdate != null" >
+        household_tfdate = #{householdTfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdTfmemo != null" >
+        household_tfmemo = #{householdTfmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="householdNewserial != null" >
+        household_newserial = #{householdNewserial,jdbcType=CHAR},
+      </if>
+      <if test="householdGhdate != null" >
+        household_ghdate = #{householdGhdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdGhreason != null" >
+        household_ghreason = #{householdGhreason,jdbcType=CHAR},
+      </if>
+      <if test="householdGhmemo != null" >
+        household_ghmemo = #{householdGhmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="householdHzgh != null" >
+        household_hzgh = #{householdHzgh,jdbcType=CHAR},
+      </if>
+      <if test="householdGfjkstat != null" >
+        household_gfjkstat = #{householdGfjkstat,jdbcType=CHAR},
+      </if>
+      <if test="householdYtfdate != null" >
+        household_ytfdate = #{householdYtfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="householdXzfserial != null" >
+        household_xzfserial = #{householdXzfserial,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+      and employee_serial = #{employeeSerial,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.unknow.entity.Household" >
+    update household
+    set house_serial = #{houseSerial,jdbcType=VARCHAR},
+      building_serial = #{buildingSerial,jdbcType=VARCHAR},
+      household_date = #{householdDate,jdbcType=TIMESTAMP},
+      household_get = #{householdGet,jdbcType=VARCHAR},
+      household_type = #{householdType,jdbcType=VARCHAR},
+      household_rate = #{householdRate,jdbcType=DECIMAL},
+      household_code = #{householdCode,jdbcType=VARCHAR},
+      household_lend = #{householdLend,jdbcType=TIMESTAMP},
+      household_person = #{householdPerson,jdbcType=VARCHAR},
+      household_mem = #{householdMem,jdbcType=VARCHAR},
+      household_rent = #{householdRent,jdbcType=DECIMAL},
+      household_method = #{householdMethod,jdbcType=CHAR},
+      household_fund = #{householdFund,jdbcType=DECIMAL},
+      household_day = #{householdDay,jdbcType=TIMESTAMP},
+      xh = #{xh,jdbcType=INTEGER},
+      household_zujbt = #{householdZujbt,jdbcType=DECIMAL},
+      household_fzjsgs = #{householdFzjsgs,jdbcType=VARCHAR},
+      household_ytk = #{householdYtk,jdbcType=CHAR},
+      household_ytkdate = #{householdYtkdate,jdbcType=TIMESTAMP},
+      household_bzzj = #{householdBzzj,jdbcType=CHAR},
+      household_bzzjcode = #{householdBzzjcode,jdbcType=CHAR},
+      household_fjgs = #{householdFjgs,jdbcType=VARCHAR},
+      household_fjje = #{householdFjje,jdbcType=DECIMAL},
+      household_zjtiao = #{householdZjtiao,jdbcType=DECIMAL},
+      household_zjchaoqi = #{householdZjchaoqi,jdbcType=DECIMAL},
+      household_sumzj = #{householdSumzj,jdbcType=DECIMAL},
+      household_belu = #{householdBelu,jdbcType=DECIMAL},
+      household_tufstat = #{householdTufstat,jdbcType=VARCHAR},
+      household_xsmj = #{householdXsmj,jdbcType=DECIMAL},
+      household_cbj = #{householdCbj,jdbcType=DECIMAL},
+      household_bzj = #{householdBzj,jdbcType=DECIMAL},
+      household_lctjl = #{householdLctjl,jdbcType=DECIMAL},
+      household_cxtjl = #{householdCxtjl,jdbcType=DECIMAL},
+      household_gntjl = #{householdGntjl,jdbcType=DECIMAL},
+      household_ddtjl = #{householdDdtjl,jdbcType=DECIMAL},
+      household_zjbz = #{householdZjbz,jdbcType=VARCHAR},
+      household_zc = #{householdZc,jdbcType=VARCHAR},
+      household_zw = #{householdZw,jdbcType=VARCHAR},
+      household_tzsj = #{householdTzsj,jdbcType=TIMESTAMP},
+      household_sbzjstat = #{householdSbzjstat,jdbcType=CHAR},
+      household_ifytk = #{householdIfytk,jdbcType=CHAR},
+      household_ytkmemo = #{householdYtkmemo,jdbcType=VARCHAR},
+      household_tfkind = #{householdTfkind,jdbcType=CHAR},
+      household_tfreason = #{householdTfreason,jdbcType=CHAR},
+      household_tfdate = #{householdTfdate,jdbcType=TIMESTAMP},
+      household_tfmemo = #{householdTfmemo,jdbcType=VARCHAR},
+      household_newserial = #{householdNewserial,jdbcType=CHAR},
+      household_ghdate = #{householdGhdate,jdbcType=TIMESTAMP},
+      household_ghreason = #{householdGhreason,jdbcType=CHAR},
+      household_ghmemo = #{householdGhmemo,jdbcType=VARCHAR},
+      household_hzgh = #{householdHzgh,jdbcType=CHAR},
+      household_gfjkstat = #{householdGfjkstat,jdbcType=CHAR},
+      household_ytfdate = #{householdYtfdate,jdbcType=TIMESTAMP},
+      household_xzfserial = #{householdXzfserial,jdbcType=VARCHAR}
+    where area_serial = #{areaSerial,jdbcType=VARCHAR}
+      and employee_serial = #{employeeSerial,jdbcType=VARCHAR}
+  </update>
+</mapper>
