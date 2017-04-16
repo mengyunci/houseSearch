@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>三环锻造集成制造执行系统</title>
+    <title>房屋信息查询</title>
     <style type="text/css">
         * {
             padding: 0px;
@@ -109,11 +109,11 @@
     </style>
 </head>
 
-<body style="background:url(${base}/images/login/zhiyue_bg.jpg); position:absolute; top:0; left:0; z-index:-100; width:100%; height:100%">
+<body style="background-color: #3baae3; position:absolute; top:0; left:0; z-index:-100; width:100%; height:100%">
 
 <div class="dl-main">
     <!--logo-->
-    <div class="logo"><img src="${base}/images/logo/zhiyue.png" width="500" height="91"/></div>
+    <#--<div class="logo"><img src="${base}/images/logo/zhiyue.png" width="500" height="91"/></div>-->
 
     <div class="bd">
         <!--标题-->
@@ -124,8 +124,7 @@
                 <!--用户名输入框-->
                 <tr class="tr-text">
                     <td width="20%" style=" text-align:center">用户名</td>
-                    <td width="70%" style="text-align:left;"><input type="text" name="username" class="yhm radius5"
-                                                                    placeholder="请输入用户名"/></td>
+                    <td width="70%" style="text-align:left;"><input type="text" name="username" class="yhm radius5" placeholder="请输入用户名"/></td>
                 </tr>
 
                 <#--<!--用户名报错信息 默认隐藏&ndash;&gt;-->
@@ -137,8 +136,7 @@
                 <!--密码输入框-->
                 <tr class="tr-text">
                     <td width="20%" style="text-align:center;">密&nbsp; &nbsp;码</td>
-                    <td width="70%" style="text-align:left;"><input type="password" name="password" class="mima radius5"
-                                                                    placeholder="请输入密码"/></td>
+                    <td width="70%" style="text-align:left;"><input type="password" name="password" class="mima radius5" placeholder="请输入密码"/></td>
                 </tr>
 
                 <!--密码报错信息 默认隐藏-->
@@ -165,19 +163,5 @@
 
     </div>
 </div>
-<#--<script type="application/javascript">-->
-
-    <#--function GetQueryString(name) {-->
-        <#--var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");-->
-        <#--var r = window.location.search.substr(1).match(reg);-->
-        <#--if (r != null)return unescape(r[2]);-->
-        <#--return null;-->
-    <#--}-->
-    <#--if (GetQueryString("error")) {-->
-        <#--var tag = document.getElementById("error_info");-->
-        <#--tag.innerHTML = "用户名或者密码错误";-->
-        <#--tag.setAttribute("class", "");-->
-    <#--}-->
-<#--</script>-->
 </body>
 </html>

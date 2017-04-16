@@ -16,7 +16,6 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-
     public String loginPost() {
         return "login";
     }
