@@ -13,24 +13,26 @@
             pageSize: 100,
             pageList: [100, 200, 300, 400, 500],
             columns: [[
-                {field: 'id', title: '编号', hidden: true, width: 10},
+                {field: 'employeeId', title: '编号', hidden: true, width: 10},
                 {field: 'employeeSerial', title: '编号', width: 10},
                 {field: 'employeeName', title: '用户名', width: 10}
             ]],
             toolbar: [{
-                iconCls: 'icon-edit',
-                text: '回复留言',
+                iconCls: 'icon-add',
+                text: '添加用户',
                 handler: function () {
-                    var selectedRow = $('#feed_back_table').datagrid('getSelected');
-                    if (selectedRow == null) {
-                        $.messager.alert('操作提示', '请选择编辑数据行！');
-                    } else {
-                        $("#feed_back_id").val(selectedRow["id"]);
-                        $("#feed_back_user_id").textbox("setValue", selectedRow["userId"]);
-                        $("#feed_back_content").textbox("setValue", selectedRow["content"]);
-                        $("#feed_back_feedback_content").textbox("setValue", selectedRow["feedbackContent"]);
-                        dlgButtonAction('datagrid', 'feed_back_dlg', '回复客户留言', 420, 'icon-edit', '${base}/feedback/modify', 'feed_back_form', 'feed_back_table');
+                        dlgButtonAction('datagrid', 'feed_back_dlg', '新增用户', 350, null, '${base}/information/add', 'information_set_up_form', 'information_set_up_table');
                     }
+            }, '-', {
+                iconCls: 'icon-remove',
+                text: '删除',
+                handler: function () {
+                    var selectedRow = $('#security_table').datagrid('getSelected');
+                    if (selectedRow == null) {
+                        $.messager.alert('操作提示', '请选择删除数据行！');
+                        return;
+                    }
+                    removeById('datagrid', 'feed_back_dlg', '${base}/information/delete', selectedRow.id);
                 }
             }],
             loadFilter: function (data) {
@@ -71,18 +73,9 @@
         <input id="feed_back_id" type="hidden" name="id"/>
         <table cellpadding="2" style="margin: auto">
             <tr>
-                <td><span>留言用户:</span></td>
+                <td><span>用户名:</span></td>
                 <td>
-                    <input class="easyui-textbox" id="feed_back_user_id" name="userId" readonly="false"
-                           data-options="readOnly:true" style="width: 150px;">
-                </td>
-            </tr>
-            <tr>
-                <td><span>留言内容:</span></td>
-                <td>
-                    <input class="easyui-textbox" id="feed_back_content" data-options="multiline:true"
-                           name="content" readonly="readonly"
-                           style="width: 150px;height: 100px">
+                    <input class="easyui-textbox" id="feed_back_user_id" name="userId" style="width: 150px;">
                 </td>
             </tr>
             <tr>
