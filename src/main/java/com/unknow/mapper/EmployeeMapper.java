@@ -36,4 +36,7 @@ public interface EmployeeMapper {
     int updateByPrimaryKeyWithBLOBs(Employee record);
 
     int updateByPrimaryKey(Employee record);
+
+    List<Employee> findBySecurity(String securityEmployeeId);
+
 }

@@ -1980,4 +1980,12 @@
       employee_telphol = #{employeeTelphol,jdbcType=VARCHAR}
     where employee_serial = #{employeeSerial,jdbcType=VARCHAR}
   </update>
+
+
+  <select id="findBySecurity" resultMap="ResultMapWithBLOBs" parameterType="string">
+    SELECT e.*
+    FROM security_king s LEFT JOIN employee e ON s.employee_serial = e.employee_serial WHERE  s.employee_serial = #{securityEmployeeId};
+  </select>
+
+
 </mapper>
