@@ -12,6 +12,7 @@ public class BaseMenu {
     private String id;
     private String text;
     private String state = "closed";
+    private String url;
     private String parentId;
 
     private List<BaseMenu> children;
@@ -54,5 +55,13 @@ public class BaseMenu {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

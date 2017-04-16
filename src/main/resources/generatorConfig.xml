@@ -63,12 +63,14 @@
             <columnOverride column="JS" property="content"/>
         </table>-->
 
-        <table tableName="area" domainObjectName="Area"/>
+        <!--<table tableName="area" domainObjectName="Area"/>
         <table tableName="department" domainObjectName="Department"/>
         <table tableName="house" domainObjectName="House"/>
         <table tableName="household" domainObjectName="Household"/>
         <table tableName="employee" domainObjectName="Employee"/>
-        <table tableName="security" domainObjectName="EmployeeSecurity"/>
+        <table tableName="security" domainObjectName="EmployeeSecurity"/>-->
+
+        <table tableName="security_king" domainObjectName="MySecurity"/>
        
 
     </context>

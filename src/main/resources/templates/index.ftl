@@ -27,7 +27,9 @@
 
 <div data-options="region:'west',title:'West',collapsible:true" style="width:400px;">
     <div class="easyui-layout" data-options="fit:true">
-        <div data-options="region:'west',title:'West',border:true" style="width:200px"></div>
+        <div data-options="region:'west',title:'West',border:true" style="width:200px">
+            <ul id="main_tree_type"></ul>
+        </div>
         <div data-options="region:'center',title:'east',border:false">
             <#include "./common/treeModel.ftl"/>
         </div>
@@ -36,7 +38,7 @@
 
 
 <div id="panel_tree" data-options="region:'center'" style="background:#eee;width:220px;">
-
+    <div id="tt" class="easyui-tabs" style="width:100%;height:100%;"></div>
 </div>
 
 <div data-options="region:'south',collapsible:false,border:false" style="text-align: center">
